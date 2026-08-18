@@ -8,6 +8,7 @@ dependencies = [
     "django-stubs>=6.0.9",
     "djangorestframework>=3.18.0",
     "djangorestframework-simplejwt>=5.5.1",
+    "pillow>=12.3.0",
     "psycopg>=3.3.4",
     "redis>=8.1.0",
 ]

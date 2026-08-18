@@ -1,7 +1,7 @@
 import environ
+import os
 
 from pathlib import Path
-
 from datetime import timedelta
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -129,3 +129,6 @@ SIMPLE_JWT = {
 
     "JTI_CLAIM": "jti",
 }
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
