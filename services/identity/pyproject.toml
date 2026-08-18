@@ -1,0 +1,13 @@
+[project]
+name = "identity"
+version = "0.1.0"
+requires-python = ">=3.10.17"
+dependencies = [
+    "django>=5.2.17",
+    "django-environ>=0.14.0",
+    "django-stubs>=6.0.9",
+    "djangorestframework>=3.18.0",
+    "djangorestframework-simplejwt>=5.5.1",
+    "psycopg>=3.3.4",
+    "redis>=8.1.0",
+]
