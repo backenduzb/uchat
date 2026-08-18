@@ -11,5 +11,9 @@ urlpatterns = [
         "api/auth/",
         include("identity.users.api.urls"),
     ),
+    path(
+        "api/users/",
+        include("identity.details.api.urls"),
+    ),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

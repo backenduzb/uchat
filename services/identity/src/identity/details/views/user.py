@@ -6,11 +6,7 @@ from rest_framework.permissions import IsAuthenticated
 from ..selectors.user import get_user_by_id, search_users
 from rest_framework.response import Response
 
-class UsersView(generics.ListAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserDetailSerializer
-
-class UserView(views.APIView):
+class UserSearchView(views.APIView):
     model = User
     serializer_class = UserDetailSerializer
     permission_classes = [IsAuthenticated]
@@ -32,16 +28,14 @@ class UserView(views.APIView):
         if not users:
             return Response(
                 {
-                    "message": f"{search_term}, Foydalanuchi topiladi?"
+                    "message": f"'{search_term}' bo'yicha hech qanday foydalanuvchi topilmadi."
                 },
                 status=404
             )
 
         serializer = self.serializer_class(users, many=True)
         
-    
         return Response(
             serializer.data,
             status=200
         )
-        
