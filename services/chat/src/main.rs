@@ -13,8 +13,11 @@ use sqlx::postgres::PgPoolOptions;
 use tracing_subscriber::EnvFilter;
 
 use crate::application::manager::SessionManager;
+use crate::application::service::ChatService;
 use crate::config::Config;
 use crate::infrastructure::auth::JwtVerifier;
+use crate::infrastructure::postgres::messages::MessageRepository;
+use crate::infrastructure::postgres::participant::ParticipantRepository;
 use crate::state::AppState;
 
 #[tokio::main]
@@ -35,7 +38,13 @@ async fn main() -> anyhow::Result<()> {
                 &config.database_url
             )
             .await?;
-
+    let message_repository = MessageRepository::new(db.clone());
+    let participant_repository = ParticipantRepository::new(db.clone());
+    let chat_service = 
+        ChatService::new(
+            message_repository,
+            participant_repository
+        );
     
     let public_key =
         tokio::fs::read(
@@ -54,6 +63,7 @@ async fn main() -> anyhow::Result<()> {
             sessions:
                 SessionManager::new(),
             auth,
+            chat: chat_service,
         });
 
     transport::tcp::server::run(

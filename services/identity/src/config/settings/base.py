@@ -104,28 +104,46 @@ REST_FRAMEWORK = {
     ),
 }
 
+JWT_PRIVATE_KEY_PATH = BASE_DIR.parent / "keys" / "jwt-private.pem"
+JWT_PUBLIC_KEY_PATH = BASE_DIR.parent / "keys" / "jwt-public.pem"
+
+with open(JWT_PRIVATE_KEY_PATH, "rb") as f:
+    JWT_PRIVATE_KEY = f.read()
+
+with open(JWT_PUBLIC_KEY_PATH, "rb") as f:
+    JWT_PUBLIC_KEY = f.read()
+
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=15),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
-    
+
     "ROTATE_REFRESH_TOKENS": True,
     "BLACKLIST_AFTER_ROTATION": True,
-    
+
     "UPDATE_LAST_LOGIN": True,
 
-    "ALGORITHM": "HS256",
-    "SIGNING_KEY": SECRET_KEY,  
+    "ALGORITHM": "RS256",
+
+    "SIGNING_KEY": JWT_PRIVATE_KEY,
+    "VERIFYING_KEY": JWT_PUBLIC_KEY,
 
     "AUTH_HEADER_TYPES": ("Bearer",),
     "AUTH_HEADER_NAME": "HTTP_AUTHORIZATION",
-    
+
     "USER_ID_FIELD": "id",
     "USER_ID_CLAIM": "user_id",
-    "USER_AUTHENTICATION_RULE": "rest_framework_simplejwt.authentication.default_user_authentication_rule",
 
-    "AUTH_TOKEN_CLASSES": ("rest_framework_simplejwt.tokens.AccessToken",),
+    "USER_AUTHENTICATION_RULE":
+        "rest_framework_simplejwt.authentication.default_user_authentication_rule",
+
+    "AUTH_TOKEN_CLASSES": (
+        "rest_framework_simplejwt.tokens.AccessToken",
+    ),
+
     "TOKEN_TYPE_CLAIM": "token_type",
-    "TOKEN_USER_CLASS": "rest_framework_simplejwt.models.TokenUser",
+
+    "TOKEN_USER_CLASS":
+        "rest_framework_simplejwt.models.TokenUser",
 
     "JTI_CLAIM": "jti",
 }

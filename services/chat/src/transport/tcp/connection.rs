@@ -28,17 +28,7 @@ pub async fn handle_connection(
     let (outgoing_tx, mut outgoing_rx) =
         mpsc::unbounded_channel::<ServerMessage>();
 
-    /*
-     * Writer task.
-     *
-     * Boshqa logiclar:
-     *
-     * Session
-     * Chat
-     * Notification
-     *
-     * shu channel orqali response yuboradi.
-     */
+    
     let writer_task = tokio::spawn(async move {
         while let Some(message) =
             outgoing_rx.recv().await
@@ -54,11 +44,6 @@ pub async fn handle_connection(
 
         Ok::<(), anyhow::Error>(())
     });
-
-    /*
-     * Hozircha connection
-     * authentication qilinmagan.
-     */
     let mut authenticated_user: Option<Uuid> =
         None;
 
@@ -76,17 +61,8 @@ pub async fn handle_connection(
             serde_json::from_slice(&payload)?;
 
         match message {
-
-            /*
-             * =========================
-             * AUTH
-             * =========================
-             */
             ClientMessage::Auth { token } => {
 
-                /*
-                 * JWT verify.
-                 */
                 let user_id =
                     match state.auth.verify(&token) {
                         Ok(user_id) => user_id,
@@ -114,16 +90,9 @@ pub async fn handle_connection(
                         }
                     };
 
-                /*
-                 * Connection ichida
-                 * authenticated user saqlanadi.
-                 */
                 authenticated_user =
                     Some(user_id);
 
-                /*
-                 * Session registry.
-                 */
                 state
                     .sessions
                     .register(
@@ -132,9 +101,7 @@ pub async fn handle_connection(
                     )
                     .await;
 
-                /*
-                 * Clientga confirmation.
-                 */
+                
                 let _ =
                     outgoing_tx.send(
                         ServerMessage::Authenticated {
@@ -148,11 +115,7 @@ pub async fn handle_connection(
                 );
             }
 
-            /*
-             * =========================
-             * PING
-             * =========================
-             */
+           
             ClientMessage::Ping => {
                 let _ =
                     outgoing_tx.send(
@@ -160,11 +123,7 @@ pub async fn handle_connection(
                     );
             }
 
-            /*
-             * =========================
-             * SEND MESSAGE
-             * =========================
-             */
+            
             ClientMessage::SendMessage {
                 conversation_id,
                 text,
@@ -172,47 +131,60 @@ pub async fn handle_connection(
                 let user_id =
                     match authenticated_user {
                         Some(user_id) => user_id,
-
+            
                         None => {
-                            let _ =
-                                outgoing_tx.send(
-                                    ServerMessage::Error {
-                                        code:
-                                            "UNAUTHENTICATED"
-                                                .to_string(),
-
-                                        message:
-                                            "Authentication required"
-                                                .to_string(),
-                                    }
-                                );
-
+                            let _ = outgoing_tx.send(
+                                ServerMessage::Error {
+                                    code:
+                                        "UNAUTHENTICATED".to_string(),
+            
+                                    message:
+                                        "Authentication required"
+                                            .to_string(),
+                                }
+                            );
+            
                             continue;
                         }
                     };
-
-                /*
-                 * Hozircha faqat test.
-                 *
-                 * Keyingi stage'da:
-                 *
-                 * ChatService
-                 *      ↓
-                 * PostgreSQL
-                 */
-                tracing::info!(
-                    %user_id,
-                    %conversation_id,
-                    %text,
-                    "message received"
+            
+                let message = match state.chat.send_message(
+                    user_id,
+                    conversation_id,
+                    text,
+                ).await {
+                    Ok(message) => message,
+            
+                    Err(error) => {
+                        tracing::warn!(
+                            %user_id,
+                            %conversation_id,
+                            ?error,
+                            "failed to send message"
+                        );
+            
+                        let _ = outgoing_tx.send(
+                            ServerMessage::Error {
+                                code:
+                                    "MESSAGE_FAILED".to_string(),
+            
+                                message:
+                                    error.to_string(),
+                            }
+                        );
+            
+                        continue;
+                    }
+                };
+            
+                let _ = outgoing_tx.send(
+                    ServerMessage::MessageSent {
+                        id: message.id,
+                    }
                 );
             }
 
-            /*
-             * =========================
-             * READ
-             * =========================
-             */
+            
             ClientMessage::ReadMessage {
                 message_id,
             } => {
@@ -245,11 +217,7 @@ pub async fn handle_connection(
                 );
             }
 
-            /*
-             * =========================
-             * TYPING
-             * =========================
-             */
+           
             ClientMessage::Typing {
                 conversation_id,
             } => {
@@ -283,12 +251,6 @@ pub async fn handle_connection(
             }
         }
     }
-
-    /*
-     * Connection closed.
-     *
-     * Session registry'dan olib tashlaymiz.
-     */
     if let Some(user_id) =
         authenticated_user
     {

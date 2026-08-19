@@ -1,42 +1,66 @@
-use chrono::Utc;
-use sqlx::PgPool;
+use anyhow::{bail, Result};
 use uuid::Uuid;
 
 use crate::domain::message::Message;
+use crate::infrastructure::postgres::{
+    message_repository::MessageRepository,
+    participant_repository::ParticipantRepository,
+};
 
-pub async fn send_message(
-    db: &PgPool,
-    sender_id: Uuid,
-    conversation_id: Uuid,
-    text: String,
-) -> anyhow::Result<Message> {
-    let message = Message {
-        id: Uuid::new_v4(),
-        conversation_id,
-        sender_id,
-        text,
-        created_at: Utc::now(),
-    };
+#[derive(Clone)]
+pub struct ChatService {
+    messages: MessageRepository,
+    participants: ParticipantRepository,
+}
 
-    sqlx::query!(
-        r#"
-        INSERT INTO messages (
-            id,
-            conversation_id,
-            sender_id,
-            text,
-            created_at
-        )
-        VALUES ($1, $2, $3, $4, $5)
-        "#,
-        message.id,
-        message.conversation_id,
-        message.sender_id,
-        message.text,
-        message.created_at,
-    )
-    .execute(db)
-    .await?;
+impl ChatService {
+    pub fn new(
+        messages: MessageRepository,
+        participants: ParticipantRepository,
+    ) -> Self {
+        Self {
+            messages,
+            participants,
+        }
+    }
 
-    Ok(message)
+    pub async fn send_message(
+        &self,
+        sender_id: Uuid,
+        conversation_id: Uuid,
+        text: String,
+    ) -> Result<Message> {
+        let text = text.trim();
+
+        if text.is_empty() {
+            bail!("message cannot be empty");
+        }
+
+        if text.len() > 4000 {
+            bail!("message is too long");
+        }
+
+        let is_member = self
+            .participants
+            .is_member(
+                conversation_id,
+                sender_id,
+            )
+            .await?;
+
+        if !is_member {
+            bail!("user is not a conversation participant");
+        }
+
+        let message = self
+            .messages
+            .create(
+                conversation_id,
+                sender_id,
+                text,
+            )
+            .await?;
+
+        Ok(message)
+    }
 }
