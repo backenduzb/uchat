@@ -34,4 +34,22 @@ impl ParticipantRepository {
 
         Ok(exists.unwrap_or(false))
     }
+
+    pub async fn get_members(
+        &self,
+        conversation_id: Uuid,
+    ) -> Result<Vec<Uuid>> {
+        let members = sqlx::query_scalar!(
+            r#"
+            SELECT user_id
+            FROM conversation_participants
+            WHERE conversation_id = $1
+            "#,
+            conversation_id,
+        )
+        .fetch_all(&self.pool)
+        .await?;
+
+        Ok(members)
+    }
 }

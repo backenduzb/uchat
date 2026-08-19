@@ -24,7 +24,7 @@ pub enum ClientMessage {
     Ping,
 }
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 #[serde(tag = "type", content = "data")]
 pub enum ServerMessage {
     Authenticated {

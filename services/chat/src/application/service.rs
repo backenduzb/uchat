@@ -3,8 +3,8 @@ use uuid::Uuid;
 
 use crate::domain::message::Message;
 use crate::infrastructure::postgres::{
-    message_repository::MessageRepository,
-    participant_repository::ParticipantRepository,
+    messages::MessageRepository,
+    participant::ParticipantRepository,
 };
 
 #[derive(Clone)]
@@ -29,7 +29,7 @@ impl ChatService {
         sender_id: Uuid,
         conversation_id: Uuid,
         text: String,
-    ) -> Result<Message> {
+    ) -> Result<(Message, Vec<Uuid>)> {
         let text = text.trim();
 
         if text.is_empty() {
@@ -61,6 +61,11 @@ impl ChatService {
             )
             .await?;
 
-        Ok(message)
+        let members = self
+            .participants
+            .get_members(conversation_id)
+            .await?;
+
+        Ok((message, members))
     }
 }

@@ -148,12 +148,12 @@ pub async fn handle_connection(
                         }
                     };
             
-                let message = match state.chat.send_message(
+                let (message, members) = match state.chat.send_message(
                     user_id,
                     conversation_id,
                     text,
                 ).await {
-                    Ok(message) => message,
+                    Ok(result) => result,
             
                     Err(error) => {
                         tracing::warn!(
@@ -176,13 +176,29 @@ pub async fn handle_connection(
                         continue;
                     }
                 };
-            
+
+                // Jo'natuvchiga tasdiqlash
                 let _ = outgoing_tx.send(
                     ServerMessage::MessageSent {
                         id: message.id,
                     }
                 );
+
+                // Barcha participantlarga xabarni broadcast qil
+                let event = ServerMessage::Message {
+                    id: message.id,
+                    conversation_id: message.conversation_id,
+                    sender_id: message.sender_id,
+                    text: message.text.clone(),
+                };
+
+                for member_id in members {
+                    if member_id != user_id {
+                        state.sessions.send_to(member_id, event.clone()).await;
+                    }
+                }
             }
+
 
             
             ClientMessage::ReadMessage {
