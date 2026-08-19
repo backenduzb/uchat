@@ -13,3 +13,10 @@ dependencies = [
     "psycopg>=3.3.4",
     "redis>=8.1.0",
 ]
+
+[tool.pyright]
+reportConstantRedefinition = false
+reportUnusedExpression = false
+
+[tool.ruff]
+ignore = ["I001"]

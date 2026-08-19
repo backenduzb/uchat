@@ -22,17 +22,9 @@ class UserSearchView(views.APIView):
         )
 
     def post(self, request):
-        search_term = request.data.get("search_term")
+        search_term = request.data.get("search_term", "")
 
         users = search_users(search_term)
-        if not users:
-            return Response(
-                {
-                    "message": f"'{search_term}' bo'yicha hech qanday foydalanuvchi topilmadi."
-                },
-                status=404
-            )
-
         serializer = self.serializer_class(users, many=True)
         
         return Response(

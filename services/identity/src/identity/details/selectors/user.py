@@ -2,9 +2,9 @@ from identity.users.models import User
 from django.db.models import Q
 from django.shortcuts import get_object_or_404
 
-def search_users(search_term: str):
+def search_users(search_term: str = ""):
     if not search_term or not search_term.strip():
-        return []  
+        return list(User.objects.all()[:50])  
         
     users = User.objects.filter(
             Q(first_name__icontains=search_term) | 
