@@ -32,7 +32,7 @@ jobs:
             - name: Build and push Authentication Service
               uses: docker/build-push-action@v5
               with:
-                  context: ./admin
+                  context: ./backend/auth
                   file: ./backend/auth/Dockerfile
                   push: true
                   tags: |
