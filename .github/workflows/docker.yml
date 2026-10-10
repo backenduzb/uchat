@@ -1,0 +1,25 @@
+
+name: Build and Push Docker Images
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - "backend/**"
+      - ".github/workflows/**"
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  auth:
+    uses: ./.github/workflows/build-image.yml
+    with:
+      service: auth
+      context: ./backend/auth
+      dockerfile: ./backend/auth/Dockerfile
+      image: admin
