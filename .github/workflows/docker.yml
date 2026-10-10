@@ -16,10 +16,17 @@ permissions:
   packages: write
 
 jobs:
-  auth:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Simple tests"
+
+  build:
+    needs: test
     uses: ./.github/workflows/build-image.yml
     with:
       service: auth
       context: ./backend/auth
       dockerfile: ./backend/auth/Dockerfile
-      image: admin
+      image: identification
