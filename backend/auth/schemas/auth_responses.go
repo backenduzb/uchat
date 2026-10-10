@@ -11,8 +11,8 @@ type UserResponse struct {
 	ID          uuid.UUID  `json:"id"`
 	Username    string     `json:"username"`
 	Email       string     `json:"email"`
-	DateOfBirth *time.Time `json:"date_of_birth, omitempty"`
-	CreateAt    time.Time  `json:"created_at"`
+	DateOfBirth *time.Time `json:"date_of_birth,omitempty"`
+	CreatedAt   time.Time  `json:"created_at"`
 }
 
 type LoginResponse struct {
@@ -28,7 +28,7 @@ func NewUserResponse(user models.User) UserResponse {
 		Username:    user.Username,
 		Email:       user.Email,
 		DateOfBirth: user.DateOfBirth,
-		CreateAt:    user.CreatedAt,
+		CreatedAt:   user.CreatedAt,
 	}
 }
 

@@ -25,10 +25,6 @@ func main() {
 		log.Fatal(err)
 	}
 	defer db.Close()
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
-	defer db.Close()
 
 	server := &http.Server{
 		Addr:              cfg.PORT,

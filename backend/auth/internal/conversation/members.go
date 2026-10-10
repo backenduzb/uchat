@@ -1,26 +1,19 @@
-package conversations
+package conversation
 
 import (
-	"encoding/json"
 	"errors"
 	"net/http"
-	"time"
 
 	authmiddleware "chat/auth/internal/auth"
 	db "chat/auth/internal/database/sqlc"
+	"chat/auth/models"
+	"chat/auth/schemas"
+	"chat/auth/services/decode"
 
 	"github.com/google/uuid"
 	"github.com/jackc/pgx/v5"
 	"github.com/jackc/pgx/v5/pgconn"
-	"github.com/jackc/pgx/v5/pgtype"
 )
-
-type conversationMemberResponse struct {
-	UserID   uuid.UUID `json:"user_id"`
-	Username string    `json:"username"`
-	Role     string    `json:"role"`
-	JoinedAt time.Time `json:"joined_at"`
-}
 
 func (h *Handler) ListMembers(w http.ResponseWriter, r *http.Request) {
 	userID, ok := authmiddleware.UserIDFromContext(r.Context())
@@ -40,14 +33,8 @@ func (h *Handler) ListMembers(w http.ResponseWriter, r *http.Request) {
 	_, err = queries.GetConversationForMember(
 		r.Context(),
 		db.GetConversationForMemberParams{
-			ConversationID: pgtype.UUID{
-				Bytes: conversationID,
-				Valid: true,
-			},
-			UserID: pgtype.UUID{
-				Bytes: userID,
-				Valid: true,
-			},
+			ConversationID: pgUUID(conversationID),
+			UserID:         pgUUID(userID),
 		},
 	)
 	if err != nil {
@@ -63,14 +50,8 @@ func (h *Handler) ListMembers(w http.ResponseWriter, r *http.Request) {
 	rows, err := queries.ListConversationMembers(
 		r.Context(),
 		db.ListConversationMembersParams{
-			ConversationID: pgtype.UUID{
-				Bytes: conversationID,
-				Valid: true,
-			},
-			UserID: pgtype.UUID{
-				Bytes: userID,
-				Valid: true,
-			},
+			ConversationID: pgUUID(conversationID),
+			UserID:         pgUUID(userID),
 		},
 	)
 	if err != nil {
@@ -78,29 +59,18 @@ func (h *Handler) ListMembers(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	members := make([]conversationMemberResponse, 0, len(rows))
+	members := make([]models.ConversationMember, 0, len(rows))
 	for _, row := range rows {
-		members = append(members, conversationMemberResponse{
-			UserID:   uuid.UUID(row.UserID.Bytes),
-			Username: row.Username,
-			Role:     row.Role,
-			JoinedAt: row.JoinedAt.Time,
+		members = append(members, models.ConversationMember{
+			ConversationID: conversationID,
+			UserID:         uuidFromPg(row.UserID),
+			Username:       row.Username,
+			Role:           row.Role,
+			JoinedAt:       row.JoinedAt.Time,
 		})
 	}
 
-	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(http.StatusOK)
-	_ = json.NewEncoder(w).Encode(members)
-}
-
-type addMemberRequest struct {
-	UserID string `json:"user_id"`
-}
-
-type addMemberResponse struct {
-    UserID   uuid.UUID `json:"user_id"`
-    Role     string    `json:"role"`
-    JoinedAt time.Time `json:"joined_at"`
+	writeJSON(w, http.StatusOK, schemas.NewConversationMemberListResponse(members))
 }
 
 func (h *Handler) AddMember(w http.ResponseWriter, r *http.Request) {
@@ -116,17 +86,12 @@ func (h *Handler) AddMember(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	var req addMemberRequest
-	decoder := json.NewDecoder(r.Body)
-	decoder.DisallowUnknownFields()
-
-	if err := decoder.Decode(&req); err != nil {
-		http.Error(w, `{"error":"invalid request body"}`, http.StatusBadRequest)
+	input, ok := decode.DecodeJSON[schemas.AddConversationMemberRequest](w, r)
+	if !ok {
 		return
 	}
 
-	newUserID, err := uuid.Parse(req.UserID)
-	if err != nil {
+	if input.UserID == uuid.Nil {
 		http.Error(w, `{"error":"invalid user_id"}`, http.StatusBadRequest)
 		return
 	}
@@ -142,8 +107,8 @@ func (h *Handler) AddMember(w http.ResponseWriter, r *http.Request) {
 	queries := db.New(tx)
 
 	role, err := queries.GetConversationRole(ctx, db.GetConversationRoleParams{
-		ConversationID: pgtype.UUID{Bytes: conversationID, Valid: true},
-		UserID:         pgtype.UUID{Bytes: requesterID, Valid: true},
+		ConversationID: pgUUID(conversationID),
+		UserID:         pgUUID(requesterID),
 	})
 	if err != nil {
 		if err == pgx.ErrNoRows {
@@ -160,8 +125,8 @@ func (h *Handler) AddMember(w http.ResponseWriter, r *http.Request) {
 	}
 
 	member, err := queries.AddMemberToConversation(ctx, db.AddMemberToConversationParams{
-		ConversationID: pgtype.UUID{Bytes: conversationID, Valid: true},
-		NewUserID:      pgtype.UUID{Bytes: newUserID, Valid: true},
+		ConversationID: pgUUID(conversationID),
+		NewUserID:      pgUUID(input.UserID),
 	})
 	if err != nil {
 		if err == pgx.ErrNoRows {
@@ -169,14 +134,12 @@ func (h *Handler) AddMember(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
-		// PostgreSQL unique_violation: the user is already a member.
 		var pgErr *pgconn.PgError
 		if errors.As(err, &pgErr) && pgErr.Code == "23505" {
 			http.Error(w, `{"error":"user is already a member"}`, http.StatusConflict)
 			return
 		}
 
-		// PostgreSQL foreign_key_violation: the target user does not exist.
 		if errors.As(err, &pgErr) && pgErr.Code == "23503" {
 			http.Error(w, `{"error":"user not found"}`, http.StatusNotFound)
 			return
@@ -191,11 +154,13 @@ func (h *Handler) AddMember(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(http.StatusCreated)
-	_ = json.NewEncoder(w).Encode(addMemberResponse{
-		UserID:   uuid.UUID(member.UserID.Bytes),
-		Role:     member.Role,
-		JoinedAt: member.JoinedAt.Time,
-	})
+	added := models.ConversationMember{
+		ConversationID: conversationID,
+		UserID:         uuidFromPg(member.UserID),
+		Role:           member.Role,
+		JoinedAt:       member.JoinedAt.Time,
+		LastReadAt:     timePtrFromTimestamptz(member.LastReadAt),
+	}
+
+	writeJSON(w, http.StatusCreated, schemas.NewConversationMemberAddResponse(added))
 }

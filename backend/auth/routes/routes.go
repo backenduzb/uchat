@@ -51,6 +51,13 @@ func NewRouter(db *pgxpool.Pool, jwtSecret []byte) http.Handler {
 			http.HandlerFunc(conversations.AddMember),
 		),
 	)
+	mux.Handle(
+		"DELETE /conversations/{id}/members/{user_id}",
+		authhandler.AuthMiddleware(
+			jwtSecret,
+			http.HandlerFunc(conversations.RemoveMember),
+		),
+	)
 
 	return mux
 }

@@ -6,16 +6,21 @@ package db
 
 import (
 	"context"
+
+	"github.com/jackc/pgx/v5/pgtype"
 )
 
 type Querier interface {
 	AddConversationMember(ctx context.Context, arg AddConversationMemberParams) (ConversationMember, error)
 	AddMemberToConversation(ctx context.Context, arg AddMemberToConversationParams) (ConversationMember, error)
+	CountConversationOwners(ctx context.Context, conversationID pgtype.UUID) (int32, error)
 	CreateConversation(ctx context.Context, arg CreateConversationParams) (Conversation, error)
 	GetConversationForMember(ctx context.Context, arg GetConversationForMemberParams) (GetConversationForMemberRow, error)
 	GetConversationRole(ctx context.Context, arg GetConversationRoleParams) (string, error)
 	ListConversationMembers(ctx context.Context, arg ListConversationMembersParams) ([]ListConversationMembersRow, error)
 	ListUserConversations(ctx context.Context, arg ListUserConversationsParams) ([]ListUserConversationsRow, error)
+	LockConversationForMemberRemoval(ctx context.Context, conversationID pgtype.UUID) (LockConversationForMemberRemovalRow, error)
+	RemoveConversationMember(ctx context.Context, arg RemoveConversationMemberParams) error
 }
 
 var _ Querier = (*Queries)(nil)

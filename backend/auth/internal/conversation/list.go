@@ -1,33 +1,14 @@
-package conversations
+package conversation
 
 import (
-	"encoding/json"
 	"net/http"
 	"strconv"
-	"time"
 
 	authmiddleware "chat/auth/internal/auth"
 	db "chat/auth/internal/database/sqlc"
-
-	"github.com/google/uuid"
-	"github.com/jackc/pgx/v5/pgtype"
+	"chat/auth/models"
+	"chat/auth/schemas"
 )
-
-
-type conversationListItem struct {
-	ID        uuid.UUID `json:"id"`
-	Type      string    `json:"type"`
-	Title     *string   `json:"title"`
-	CreatedAt time.Time `json:"created_at"`
-	UpdatedAt time.Time `json:"updated_at"`
-	Role      string    `json:"role"`
-}
-
-type listConversationsResponse struct {
-	Items []conversationListItem `json:"items"`
-	Page  int                    `json:"page"`
-	Limit int                    `json:"limit"`
-}
 
 func (h *Handler) List(w http.ResponseWriter, r *http.Request) {
 	userID, ok := authmiddleware.UserIDFromContext(r.Context())
@@ -65,10 +46,7 @@ func (h *Handler) List(w http.ResponseWriter, r *http.Request) {
 	rows, err := db.New(h.pool).ListUserConversations(
 		r.Context(),
 		db.ListUserConversationsParams{
-			UserID: pgtype.UUID{
-				Bytes: [16]byte(userID),
-				Valid: true,
-			},
+			UserID:     pgUUID(userID),
 			PageSize:   int32(limit),
 			PageOffset: int32(offset),
 		},
@@ -78,31 +56,17 @@ func (h *Handler) List(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	items := make([]conversationListItem, 0, len(rows))
-
+	summaries := make([]models.ConversationSummary, 0, len(rows))
 	for _, row := range rows {
-		item := conversationListItem{
-			ID:        uuid.UUID(row.ID.Bytes),
+		summaries = append(summaries, models.ConversationSummary{
+			ID:        uuidFromPg(row.ID),
 			Type:      row.Type,
+			Title:     textToPtr(row.Title),
 			CreatedAt: row.CreatedAt.Time,
 			UpdatedAt: row.UpdatedAt.Time,
 			Role:      row.Role,
-		}
-
-		if row.Title.Valid {
-			title := row.Title.String
-			item.Title = &title
-		}
-
-		items = append(items, item)
+		})
 	}
 
-	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(http.StatusOK)
-
-	_ = json.NewEncoder(w).Encode(listConversationsResponse{
-		Items: items,
-		Page:  page,
-		Limit: limit,
-	})
+	writeJSON(w, http.StatusOK, schemas.NewConversationListResponse(summaries, page, limit))
 }
