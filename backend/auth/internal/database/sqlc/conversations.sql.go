@@ -44,6 +44,40 @@ func (q *Queries) AddConversationMember(ctx context.Context, arg AddConversation
 	return i, err
 }
 
+const addMemberToConversation = `-- name: AddMemberToConversation :one
+INSERT INTO conversation_members (
+    conversation_id,
+    user_id,
+    role
+)
+SELECT
+    c.id,
+    $1,
+    'member'
+FROM conversations AS c
+WHERE c.id = $2
+  AND c.type = 'group'
+RETURNING conversation_id, user_id, role, joined_at, last_read_at
+`
+
+type AddMemberToConversationParams struct {
+	NewUserID      pgtype.UUID `json:"new_user_id"`
+	ConversationID pgtype.UUID `json:"conversation_id"`
+}
+
+func (q *Queries) AddMemberToConversation(ctx context.Context, arg AddMemberToConversationParams) (ConversationMember, error) {
+	row := q.db.QueryRow(ctx, addMemberToConversation, arg.NewUserID, arg.ConversationID)
+	var i ConversationMember
+	err := row.Scan(
+		&i.ConversationID,
+		&i.UserID,
+		&i.Role,
+		&i.JoinedAt,
+		&i.LastReadAt,
+	)
+	return i, err
+}
+
 const createConversation = `-- name: CreateConversation :one
 INSERT INTO conversations (
     id,
@@ -136,6 +170,81 @@ func (q *Queries) GetConversationForMember(ctx context.Context, arg GetConversat
 		&i.LastReadAt,
 	)
 	return i, err
+}
+
+const getConversationRole = `-- name: GetConversationRole :one
+SELECT role
+FROM conversation_members
+WHERE conversation_id = $1
+  AND user_id = $2
+`
+
+type GetConversationRoleParams struct {
+	ConversationID pgtype.UUID `json:"conversation_id"`
+	UserID         pgtype.UUID `json:"user_id"`
+}
+
+func (q *Queries) GetConversationRole(ctx context.Context, arg GetConversationRoleParams) (string, error) {
+	row := q.db.QueryRow(ctx, getConversationRole, arg.ConversationID, arg.UserID)
+	var role string
+	err := row.Scan(&role)
+	return role, err
+}
+
+const listConversationMembers = `-- name: ListConversationMembers :many
+SELECT
+    cm.user_id,
+    u.username,
+    cm.role,
+    cm.joined_at
+FROM conversation_members AS cm
+JOIN users AS u
+    ON u.id = cm.user_id
+WHERE cm.conversation_id = $1
+  AND EXISTS (
+      SELECT 1
+      FROM conversation_members AS requester
+      WHERE requester.conversation_id = cm.conversation_id
+        AND requester.user_id = $2
+  )
+ORDER BY cm.joined_at ASC, cm.user_id ASC
+`
+
+type ListConversationMembersParams struct {
+	ConversationID pgtype.UUID `json:"conversation_id"`
+	UserID         pgtype.UUID `json:"user_id"`
+}
+
+type ListConversationMembersRow struct {
+	UserID   pgtype.UUID        `json:"user_id"`
+	Username string             `json:"username"`
+	Role     string             `json:"role"`
+	JoinedAt pgtype.Timestamptz `json:"joined_at"`
+}
+
+func (q *Queries) ListConversationMembers(ctx context.Context, arg ListConversationMembersParams) ([]ListConversationMembersRow, error) {
+	rows, err := q.db.Query(ctx, listConversationMembers, arg.ConversationID, arg.UserID)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+	var items []ListConversationMembersRow
+	for rows.Next() {
+		var i ListConversationMembersRow
+		if err := rows.Scan(
+			&i.UserID,
+			&i.Username,
+			&i.Role,
+			&i.JoinedAt,
+		); err != nil {
+			return nil, err
+		}
+		items = append(items, i)
+	}
+	if err := rows.Err(); err != nil {
+		return nil, err
+	}
+	return items, nil
 }
 
 const listUserConversations = `-- name: ListUserConversations :many

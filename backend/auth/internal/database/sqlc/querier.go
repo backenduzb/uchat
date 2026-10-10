@@ -10,8 +10,11 @@ import (
 
 type Querier interface {
 	AddConversationMember(ctx context.Context, arg AddConversationMemberParams) (ConversationMember, error)
+	AddMemberToConversation(ctx context.Context, arg AddMemberToConversationParams) (ConversationMember, error)
 	CreateConversation(ctx context.Context, arg CreateConversationParams) (Conversation, error)
 	GetConversationForMember(ctx context.Context, arg GetConversationForMemberParams) (GetConversationForMemberRow, error)
+	GetConversationRole(ctx context.Context, arg GetConversationRoleParams) (string, error)
+	ListConversationMembers(ctx context.Context, arg ListConversationMembersParams) ([]ListConversationMembersRow, error)
 	ListUserConversations(ctx context.Context, arg ListUserConversationsParams) ([]ListUserConversationsRow, error)
 }
 

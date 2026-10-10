@@ -29,6 +29,29 @@ func NewRouter(db *pgxpool.Pool, jwtSecret []byte) http.Handler {
 			http.HandlerFunc(conversations.List),
 		),
 	)
+	mux.Handle(
+		"GET /conversations/{id}",
+		authhandler.AuthMiddleware(
+			jwtSecret,
+			http.HandlerFunc(conversations.Get),
+		),
+	)
+	mux.Handle(
+		"GET /conversations/{id}/members",
+		authhandler.AuthMiddleware(
+			jwtSecret,
+			http.HandlerFunc(conversations.ListMembers),
+		),
+	)
+
+	mux.Handle(
+		"POST /conversations/{id}/members",
+		authhandler.AuthMiddleware(
+			jwtSecret,
+			http.HandlerFunc(conversations.AddMember),
+		),
+	)
+
 	return mux
 }
 
