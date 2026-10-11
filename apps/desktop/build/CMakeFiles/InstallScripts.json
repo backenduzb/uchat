@@ -1,0 +1,7 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/vic/Projects/chat/apps/desktop/build/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

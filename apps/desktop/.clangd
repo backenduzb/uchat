@@ -1,0 +1,14 @@
+
+CompileFlags:
+  CompilationDatabase: build
+  Add:
+    - -Wall
+    - -Wextra
+    - -Wpedantic
+    - -Wshadow
+    - -Wconversion
+    - -Wsign-conversion
+
+Diagnostics:
+  MissingIncludes: Strict
+  UnusedIncludes: Strict

@@ -1,0 +1,5 @@
+/home/vic/Projects/chat/apps/desktop/build/CMakeFiles/uchat.dir
+/home/vic/Projects/chat/apps/desktop/build/CMakeFiles/edit_cache.dir
+/home/vic/Projects/chat/apps/desktop/build/CMakeFiles/rebuild_cache.dir
+/home/vic/Projects/chat/apps/desktop/build/CMakeFiles/uchat_autogen_timestamp_deps.dir
+/home/vic/Projects/chat/apps/desktop/build/CMakeFiles/uchat_autogen.dir
