@@ -44,6 +44,7 @@ template <> constexpr inline auto Button::qt_create_metaobjectdata<qt_meta_tag_Z
         "hoverBackground",
         "pressedBackground",
         "disabledBackground",
+        "rippleColor",
         "borderRadius",
         "animationDuration"
     };
@@ -59,10 +60,12 @@ template <> constexpr inline auto Button::qt_create_metaobjectdata<qt_meta_tag_Z
         QtMocHelpers::PropertyData<QColor>(4, 0x80000000 | 2, QMC::DefaultPropertyFlags | QMC::Writable | QMC::EnumOrFlag | QMC::StdCppSet),
         // property 'disabledBackground'
         QtMocHelpers::PropertyData<QColor>(5, 0x80000000 | 2, QMC::DefaultPropertyFlags | QMC::Writable | QMC::EnumOrFlag | QMC::StdCppSet),
+        // property 'rippleColor'
+        QtMocHelpers::PropertyData<QColor>(6, 0x80000000 | 2, QMC::DefaultPropertyFlags | QMC::Writable | QMC::EnumOrFlag | QMC::StdCppSet),
         // property 'borderRadius'
-        QtMocHelpers::PropertyData<int>(6, QMetaType::Int, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet),
-        // property 'animationDuration'
         QtMocHelpers::PropertyData<int>(7, QMetaType::Int, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet),
+        // property 'animationDuration'
+        QtMocHelpers::PropertyData<int>(8, QMetaType::Int, QMC::DefaultPropertyFlags | QMC::Writable | QMC::StdCppSet),
     };
     QtMocHelpers::UintData qt_enums {
     };
@@ -89,8 +92,9 @@ void Button::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         case 1: *reinterpret_cast<QColor*>(_v) = _t->hoverBackground(); break;
         case 2: *reinterpret_cast<QColor*>(_v) = _t->pressedBackground(); break;
         case 3: *reinterpret_cast<QColor*>(_v) = _t->disabledBackground(); break;
-        case 4: *reinterpret_cast<int*>(_v) = _t->borderRadius(); break;
-        case 5: *reinterpret_cast<int*>(_v) = _t->animationDuration(); break;
+        case 4: *reinterpret_cast<QColor*>(_v) = _t->rippleColor(); break;
+        case 5: *reinterpret_cast<int*>(_v) = _t->borderRadius(); break;
+        case 6: *reinterpret_cast<int*>(_v) = _t->animationDuration(); break;
         default: break;
         }
     }
@@ -101,8 +105,9 @@ void Button::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         case 1: _t->setHoverBackground(*reinterpret_cast<QColor*>(_v)); break;
         case 2: _t->setPressedBackground(*reinterpret_cast<QColor*>(_v)); break;
         case 3: _t->setDisabledBackground(*reinterpret_cast<QColor*>(_v)); break;
-        case 4: _t->setBorderRadius(*reinterpret_cast<int*>(_v)); break;
-        case 5: _t->setAnimationDuration(*reinterpret_cast<int*>(_v)); break;
+        case 4: _t->setRippleColor(*reinterpret_cast<QColor*>(_v)); break;
+        case 5: _t->setBorderRadius(*reinterpret_cast<int*>(_v)); break;
+        case 6: _t->setAnimationDuration(*reinterpret_cast<int*>(_v)); break;
         default: break;
         }
     }
@@ -130,7 +135,7 @@ int Button::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
             || _c == QMetaObject::ResetProperty || _c == QMetaObject::BindableProperty
             || _c == QMetaObject::RegisterPropertyMetaType) {
         qt_static_metacall(this, _c, _id, _a);
-        _id -= 6;
+        _id -= 7;
     }
     return _id;
 }

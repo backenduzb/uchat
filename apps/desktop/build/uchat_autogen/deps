@@ -7,10 +7,18 @@ uchat_autogen/timestamp: \
 	/home/vic/Projects/chat/apps/desktop/src/animation/AnimationManager.hpp \
 	/home/vic/Projects/chat/apps/desktop/src/app/AppState.cpp \
 	/home/vic/Projects/chat/apps/desktop/src/app/AppState.hpp \
+	/home/vic/Projects/chat/apps/desktop/src/chat/chat_models.hpp \
+	/home/vic/Projects/chat/apps/desktop/src/chat/chat_repository.hpp \
+	/home/vic/Projects/chat/apps/desktop/src/chat/mock_chat_repository.cpp \
+	/home/vic/Projects/chat/apps/desktop/src/chat/mock_chat_repository.hpp \
 	/home/vic/Projects/chat/apps/desktop/src/components/Button.cpp \
 	/home/vic/Projects/chat/apps/desktop/src/components/Button.hpp \
+	/home/vic/Projects/chat/apps/desktop/src/components/IconButton.cpp \
+	/home/vic/Projects/chat/apps/desktop/src/components/IconButton.hpp \
 	/home/vic/Projects/chat/apps/desktop/src/components/InputField.cpp \
 	/home/vic/Projects/chat/apps/desktop/src/components/InputField.hpp \
+	/home/vic/Projects/chat/apps/desktop/src/components/Lucide.cpp \
+	/home/vic/Projects/chat/apps/desktop/src/components/Lucide.hpp \
 	/home/vic/Projects/chat/apps/desktop/src/http/auth/Authorization.cpp \
 	/home/vic/Projects/chat/apps/desktop/src/http/auth/Authorization.hpp \
 	/home/vic/Projects/chat/apps/desktop/src/main.cpp \
@@ -19,10 +27,24 @@ uchat_autogen/timestamp: \
 	/home/vic/Projects/chat/apps/desktop/src/theme/ThemeManager.hpp \
 	/home/vic/Projects/chat/apps/desktop/src/ui/auth/login.cpp \
 	/home/vic/Projects/chat/apps/desktop/src/ui/auth/login.hpp \
+	/home/vic/Projects/chat/apps/desktop/src/ui/chat/area/chat_area.cpp \
+	/home/vic/Projects/chat/apps/desktop/src/ui/chat/area/chat_area.hpp \
+	/home/vic/Projects/chat/apps/desktop/src/ui/chat/conversation/item.cpp \
+	/home/vic/Projects/chat/apps/desktop/src/ui/chat/conversation/item.hpp \
+	/home/vic/Projects/chat/apps/desktop/src/ui/chat/conversation/list.cpp \
+	/home/vic/Projects/chat/apps/desktop/src/ui/chat/conversation/list.hpp \
+	/home/vic/Projects/chat/apps/desktop/src/ui/chat/group/dialog.cpp \
+	/home/vic/Projects/chat/apps/desktop/src/ui/chat/group/dialog.hpp \
+	/home/vic/Projects/chat/apps/desktop/src/ui/chat/message/bubble.cpp \
+	/home/vic/Projects/chat/apps/desktop/src/ui/chat/message/bubble.hpp \
+	/home/vic/Projects/chat/apps/desktop/src/ui/components/layout/MenuDrawer.cpp \
+	/home/vic/Projects/chat/apps/desktop/src/ui/components/layout/MenuDrawer.hpp \
+	/home/vic/Projects/chat/apps/desktop/src/ui/components/layout/TopBar.cpp \
+	/home/vic/Projects/chat/apps/desktop/src/ui/components/layout/TopBar.hpp \
 	/home/vic/Projects/chat/apps/desktop/src/ui/main/window.cpp \
 	/home/vic/Projects/chat/apps/desktop/src/ui/main/window.hpp \
-	/home/vic/Projects/chat/apps/desktop/src/ui/menu/slide.cpp \
-	/home/vic/Projects/chat/apps/desktop/src/ui/menu/slide.hpp \
+	/home/vic/Projects/chat/apps/desktop/src/ui/theme/ThemeEditor.cpp \
+	/home/vic/Projects/chat/apps/desktop/src/ui/theme/ThemeEditor.hpp \
 	/usr/include/alloca.h \
 	/usr/include/asm-generic/bitsperlong.h \
 	/usr/include/asm-generic/errno-base.h \
@@ -324,13 +346,16 @@ uchat_autogen/timestamp: \
 	/usr/include/linux/types.h \
 	/usr/include/locale.h \
 	/usr/include/pthread.h \
+	/usr/include/qt6/QtCore/QDateTime \
 	/usr/include/qt6/QtCore/QEasingCurve \
+	/usr/include/qt6/QtCore/QMap \
 	/usr/include/qt6/QtCore/QObject \
 	/usr/include/qt6/QtCore/QParallelAnimationGroup \
 	/usr/include/qt6/QtCore/QPoint \
 	/usr/include/qt6/QtCore/QPointer \
 	/usr/include/qt6/QtCore/QPropertyAnimation \
 	/usr/include/qt6/QtCore/QString \
+	/usr/include/qt6/QtCore/QStringList \
 	/usr/include/qt6/QtCore/QVariantAnimation \
 	/usr/include/qt6/QtCore/QVector \
 	/usr/include/qt6/QtCore/q17memory.h \
@@ -359,6 +384,7 @@ uchat_autogen/timestamp: \
 	/usr/include/qt6/QtCore/qbytearrayalgorithms.h \
 	/usr/include/qt6/QtCore/qbytearraylist.h \
 	/usr/include/qt6/QtCore/qbytearrayview.h \
+	/usr/include/qt6/QtCore/qcalendar.h \
 	/usr/include/qt6/QtCore/qchar.h \
 	/usr/include/qt6/QtCore/qcheckedint_impl.h \
 	/usr/include/qt6/QtCore/qcompare.h \
@@ -373,6 +399,7 @@ uchat_autogen/timestamp: \
 	/usr/include/qt6/QtCore/qcontiguouscache.h \
 	/usr/include/qt6/QtCore/qdarwinhelpers.h \
 	/usr/include/qt6/QtCore/qdatastream.h \
+	/usr/include/qt6/QtCore/qdatetime.h \
 	/usr/include/qt6/QtCore/qdebug.h \
 	/usr/include/qt6/QtCore/qeasingcurve.h \
 	/usr/include/qt6/QtCore/qendian.h \
@@ -393,6 +420,7 @@ uchat_autogen/timestamp: \
 	/usr/include/qt6/QtCore/qlatin1stringview.h \
 	/usr/include/qt6/QtCore/qline.h \
 	/usr/include/qt6/QtCore/qlist.h \
+	/usr/include/qt6/QtCore/qlocale.h \
 	/usr/include/qt6/QtCore/qlogging.h \
 	/usr/include/qt6/QtCore/qmalloc.h \
 	/usr/include/qt6/QtCore/qmap.h \
@@ -471,6 +499,8 @@ uchat_autogen/timestamp: \
 	/usr/include/qt6/QtCore/qxptype_traits.h \
 	/usr/include/qt6/QtCore/qyieldcpu.h \
 	/usr/include/qt6/QtGui/QColor \
+	/usr/include/qt6/QtGui/QIcon \
+	/usr/include/qt6/QtGui/QPixmap \
 	/usr/include/qt6/QtGui/qaction.h \
 	/usr/include/qt6/QtGui/qbitmap.h \
 	/usr/include/qt6/QtGui/qbrush.h \
@@ -501,12 +531,15 @@ uchat_autogen/timestamp: \
 	/usr/include/qt6/QtGui/qtguiglobal.h \
 	/usr/include/qt6/QtGui/qtransform.h \
 	/usr/include/qt6/QtGui/qwindowdefs.h \
+	/usr/include/qt6/QtWidgets/QAbstractButton \
+	/usr/include/qt6/QtWidgets/QDialog \
 	/usr/include/qt6/QtWidgets/QFrame \
 	/usr/include/qt6/QtWidgets/QLineEdit \
 	/usr/include/qt6/QtWidgets/QMainWindow \
 	/usr/include/qt6/QtWidgets/QPushButton \
 	/usr/include/qt6/QtWidgets/QWidget \
 	/usr/include/qt6/QtWidgets/qabstractbutton.h \
+	/usr/include/qt6/QtWidgets/qdialog.h \
 	/usr/include/qt6/QtWidgets/qframe.h \
 	/usr/include/qt6/QtWidgets/qlineedit.h \
 	/usr/include/qt6/QtWidgets/qmainwindow.h \

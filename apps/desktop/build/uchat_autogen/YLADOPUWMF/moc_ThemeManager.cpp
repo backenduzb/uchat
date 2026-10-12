@@ -43,6 +43,10 @@ template <> constexpr inline auto ThemeManager::qt_create_metaobjectdata<qt_meta
         "",
         "Theme",
         "theme",
+        "accentChanged",
+        "QColor",
+        "accent",
+        "appearanceChanged",
         "Dark",
         "Light"
     };
@@ -52,14 +56,20 @@ template <> constexpr inline auto ThemeManager::qt_create_metaobjectdata<qt_meta
         QtMocHelpers::SignalData<void(enum Theme)>(1, 2, QMC::AccessPublic, QMetaType::Void, {{
             { 0x80000000 | 3, 4 },
         }}),
+        // Signal 'accentChanged'
+        QtMocHelpers::SignalData<void(const QColor &)>(5, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { 0x80000000 | 6, 7 },
+        }}),
+        // Signal 'appearanceChanged'
+        QtMocHelpers::SignalData<void()>(8, 2, QMC::AccessPublic, QMetaType::Void),
     };
     QtMocHelpers::UintData qt_properties {
     };
     QtMocHelpers::UintData qt_enums {
         // enum 'Theme'
         QtMocHelpers::EnumData<enum Theme>(3, 3, QMC::EnumIsScoped).add({
-            {    5, Theme::Dark },
-            {    6, Theme::Light },
+            {    9, Theme::Dark },
+            {   10, Theme::Light },
         }),
     };
     return QtMocHelpers::metaObjectData<ThemeManager, qt_meta_tag_ZN12ThemeManagerE_t>(QMC::MetaObjectFlag{}, qt_stringData,
@@ -81,11 +91,17 @@ void ThemeManager::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
         case 0: _t->themeChanged((*reinterpret_cast<std::add_pointer_t<enum Theme>>(_a[1]))); break;
+        case 1: _t->accentChanged((*reinterpret_cast<std::add_pointer_t<QColor>>(_a[1]))); break;
+        case 2: _t->appearanceChanged(); break;
         default: ;
         }
     }
     if (_c == QMetaObject::IndexOfMethod) {
         if (QtMocHelpers::indexOfMethod<void (ThemeManager::*)(Theme )>(_a, &ThemeManager::themeChanged, 0))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (ThemeManager::*)(const QColor & )>(_a, &ThemeManager::accentChanged, 1))
+            return;
+        if (QtMocHelpers::indexOfMethod<void (ThemeManager::*)()>(_a, &ThemeManager::appearanceChanged, 2))
             return;
     }
 }
@@ -109,14 +125,14 @@ int ThemeManager::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 1)
+        if (_id < 3)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 1;
+        _id -= 3;
     }
     if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 1)
+        if (_id < 3)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 1;
+        _id -= 3;
     }
     return _id;
 }
@@ -125,5 +141,17 @@ int ThemeManager::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 void ThemeManager::themeChanged(Theme _t1)
 {
     QMetaObject::activate<void>(this, &staticMetaObject, 0, nullptr, _t1);
+}
+
+// SIGNAL 1
+void ThemeManager::accentChanged(const QColor & _t1)
+{
+    QMetaObject::activate<void>(this, &staticMetaObject, 1, nullptr, _t1);
+}
+
+// SIGNAL 2
+void ThemeManager::appearanceChanged()
+{
+    QMetaObject::activate(this, &staticMetaObject, 2, nullptr);
 }
 QT_WARNING_POP

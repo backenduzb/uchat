@@ -10,9 +10,6 @@ QLineEdit {
     selection-color: #FFFFFF;
 }
 
-/* Theme colors for the animated InputField. Geometry lives in login.qss.
-   QLineEdit rules above already cover text/selection (InputField is a
-   QLineEdit subclass); only the animation targets need qproperties here. */
 InputField {
     qproperty-normalBorderColor: #777777;
     qproperty-focusedBorderColor: #000000;
@@ -42,10 +39,6 @@ QPushButton:disabled {
     border-color: #777777;
 }
 
-/* Theme colors for the animated Button. Placed after QPushButton so the
-   Button text color wins for Button instances (both selectors match the
-   subclass). The native background stays transparent via login.qss; the
-   animated background comes from these qproperties. */
 Button {
     color: #FFFFFF;
     qproperty-normalBackground: #000000;
@@ -56,6 +49,69 @@ Button {
 
 Button:disabled {
     color: #777777;
+}
+
+TopBar {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+TopBar QWidget#topBarSearchBox {
+    background-color: #F0F0F0;
+    border-color: #F0F0F0;
+}
+
+TopBar QLineEdit#topBarSearchInput {
+    color: #000000;
+    selection-background-color: #000000;
+    selection-color: #FFFFFF;
+}
+
+TopBar QLabel#topBarSearchIcon {
+    color: #767676;
+}
+
+IconButton {
+    color: #555555;
+    qproperty-iconColor: #555555;
+    qproperty-rippleColor: rgba(0, 0, 0, 40);
+}
+
+Button {
+    qproperty-rippleColor: rgba(255, 255, 255, 70);
+}
+
+MenuDrawer QWidget#menuPanel {
+    background-color: #FFFFFF;
+}
+
+MenuDrawer QLabel#menuAvatar {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+MenuDrawer QLabel#menuName {
+    color: #000000;
+}
+
+MenuDrawer QLabel#menuUsername {
+    color: #767676;
+}
+
+MenuDrawer QLabel#menuSectionTitle {
+    color: #000000;
+}
+
+MenuDrawer QWidget#menuSeparator {
+    background-color: #E5E5E5;
+}
+
+Button#menuItemButton {
+    color: #000000;
+    qproperty-normalBackground: #F0F0F0;
+    qproperty-hoverBackground: #E4E4E4;
+    qproperty-pressedBackground: #D4D4D4;
+    qproperty-disabledBackground: #E5E5E5;
 }
 
 QLabel#errorLabel {

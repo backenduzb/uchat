@@ -58,6 +58,71 @@ Button:disabled {
     color: #888888;
 }
 
+/* TopBar dark: rasm #171717 fon + #2C2C2C pill */
+TopBar {
+    background-color: #171717;
+    border-bottom: 1px solid #232323;
+}
+
+TopBar QWidget#topBarSearchBox {
+    background-color: #2C2C2C;
+    border-color: #2C2C2C;
+}
+
+TopBar QLineEdit#topBarSearchInput {
+    color: #F5F5F5;
+    selection-background-color: #FFFFFF;
+    selection-color: #171717;
+}
+
+TopBar QLabel#topBarSearchIcon {
+    color: #71717A;
+}
+
+IconButton {
+    color: #A1A1AA;
+    qproperty-iconColor: #A1A1AA;
+    qproperty-rippleColor: rgba(255, 255, 255, 45);
+}
+
+Button {
+    qproperty-rippleColor: rgba(0, 0, 0, 45);
+}
+
+/* Yon menyu dark */
+MenuDrawer QWidget#menuPanel {
+    background-color: #1E1E1E;
+}
+
+MenuDrawer QLabel#menuAvatar {
+    background-color: #F5F5F5;
+    color: #171717;
+}
+
+MenuDrawer QLabel#menuName {
+    color: #F5F5F5;
+}
+
+MenuDrawer QLabel#menuUsername {
+    color: #A1A1AA;
+}
+
+MenuDrawer QLabel#menuSectionTitle {
+    color: #F5F5F5;
+}
+
+MenuDrawer QWidget#menuSeparator {
+    background-color: #2A2A2E;
+}
+
+Button#menuItemButton {
+    color: #F5F5F5;
+    qproperty-normalBackground: #2C2C2C;
+    qproperty-hoverBackground: #333333;
+    qproperty-pressedBackground: #3A3A3A;
+    qproperty-disabledBackground: #2A2A2A;
+}
+
 QLabel#errorLabel {
     color: #FF7070;
 }

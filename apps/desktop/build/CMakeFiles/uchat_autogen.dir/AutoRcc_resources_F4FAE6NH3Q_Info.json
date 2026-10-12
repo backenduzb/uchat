@@ -12,6 +12,8 @@
 		"/home/vic/Projects/chat/apps/desktop/src/resources/styles/global.qss",
 		"/home/vic/Projects/chat/apps/desktop/src/resources/styles/themes/dark.qss",
 		"/home/vic/Projects/chat/apps/desktop/src/resources/styles/themes/light.qss",
+		"/home/vic/Projects/chat/apps/desktop/src/resources/styles/components/drawer.qss",
+		"/home/vic/Projects/chat/apps/desktop/src/resources/styles/components/topbar.qss",
 		"/home/vic/Projects/chat/apps/desktop/src/resources/styles/auth/login.qss"
 	],
 	"LOCK_FILE" : "/home/vic/Projects/chat/apps/desktop/build/CMakeFiles/uchat_autogen.dir/AutoRcc_resources_F4FAE6NH3Q_Lock.lock",

@@ -15,10 +15,6 @@ int main(int argc, char* argv[])
     ThemeManager themeManager;
     AnimationManager animationManager;
 
-    if (!themeManager.setTheme(ThemeManager::Theme::Light)) {
-        qWarning() << "Failed to load light theme.";
-    }
-
     MainWindow mainWindow(&themeManager, &animationManager);
     mainWindow.show();
 

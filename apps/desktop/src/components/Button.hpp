@@ -15,6 +15,7 @@ class Button final : public QPushButton {
     Q_PROPERTY(QColor hoverBackground READ hoverBackground WRITE setHoverBackground)
     Q_PROPERTY(QColor pressedBackground READ pressedBackground WRITE setPressedBackground)
     Q_PROPERTY(QColor disabledBackground READ disabledBackground WRITE setDisabledBackground)
+    Q_PROPERTY(QColor rippleColor READ rippleColor WRITE setRippleColor)
     Q_PROPERTY(int borderRadius READ borderRadius WRITE setBorderRadius)
     Q_PROPERTY(int animationDuration READ animationDuration WRITE setAnimationDuration)
 
@@ -36,6 +37,9 @@ public:
 
     [[nodiscard]] QColor disabledBackground() const noexcept;
     void setDisabledBackground(const QColor& color);
+
+    [[nodiscard]] QColor rippleColor() const noexcept;
+    void setRippleColor(const QColor& color);
 
     [[nodiscard]] int borderRadius() const noexcept;
     void setBorderRadius(int radius);
@@ -71,6 +75,11 @@ private:
     QColor m_pressedBackground = QColor("#555555");
     QColor m_disabledBackground = QColor("#E5E5E5");
     QColor m_currentBackground = QColor("#000000");
+    QColor m_rippleColor = QColor(255, 255, 255, 70);
+    QPointF m_rippleOrigin;
+    double m_rippleProgress = 1.0;
+    bool m_rippleActive = false;
+    int m_rippleDuration = 450;
     bool m_loading = false;
     QTimer *m_loadingTimer = nullptr;
     qreal m_loadingAngle = 0.0;
@@ -81,5 +90,8 @@ private:
     bool m_pressed = false;
 
     QPointer<QVariantAnimation> m_animation;
+    QPointer<QVariantAnimation> m_rippleAnimation;
     ThemeManager* m_themeManager = nullptr;
+    void startRipple(const QPointF& origin);
+    [[nodiscard]] qreal maxRippleRadius(const QPointF& origin) const noexcept;
 };

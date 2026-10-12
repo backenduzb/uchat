@@ -1,0 +1,23 @@
+TopBar {
+    min-height: 56px;
+    max-height: 56px;
+    border: none;
+}
+
+TopBar QWidget#topBarSearchBox {
+    border-radius: 20px;
+    border: 1px solid transparent;
+}
+
+TopBar QLineEdit#topBarSearchInput {
+    border: none;
+    background: transparent;
+    padding: 8px 4px 8px 0px;
+    font-size: 11pt;
+}
+
+TopBar QLabel#topBarSearchIcon {
+    background: transparent;
+    border: none;
+    padding: 0px 0px 0px 14px;
+}

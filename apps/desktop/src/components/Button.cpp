@@ -6,6 +6,7 @@
 #include <QPaintEvent>
 #include <QPainter>
 #include <QPainterPath>
+#include <QtMath>
 #include <qtimer.h>
 
 #include "animation/AnimationManager.hpp"
@@ -46,6 +47,7 @@ Button::Button(QWidget* parent, ThemeManager* themeManager)
         m_hoverBackground = palette.buttonHover;
         m_pressedBackground = palette.buttonPressed;
         m_disabledBackground = palette.buttonDisabled;
+        m_rippleColor = palette.rippleColor;
         m_currentBackground = targetBackground();
         setThemeManager(m_themeManager);
     }
@@ -62,8 +64,14 @@ void Button::setThemeManager(ThemeManager* themeManager) {
     }
     m_themeManager = themeManager;
     if (m_themeManager) {
-        connect(m_themeManager, &ThemeManager::themeChanged, this,
-                [this]() { refreshForState(false); });
+        const auto palette = m_themeManager->currentPalette();
+        m_rippleColor = palette.rippleColor;
+        connect(m_themeManager, &ThemeManager::themeChanged, this, [this]() {
+            if (m_themeManager) {
+                m_rippleColor = m_themeManager->currentPalette().rippleColor;
+            }
+            refreshForState(false);
+        });
     }
 }
 
@@ -115,6 +123,18 @@ void Button::setDisabledBackground(const QColor& color) {
     refreshForState(false);
 }
 
+QColor Button::rippleColor() const noexcept {
+    return m_rippleColor;
+}
+
+void Button::setRippleColor(const QColor& color) {
+    if (!color.isValid() || color == m_rippleColor) {
+        return;
+    }
+    m_rippleColor = color;
+    update();
+}
+
 int Button::borderRadius() const noexcept {
     return m_borderRadius;
 }
@@ -157,13 +177,30 @@ void Button::paintEvent(QPaintEvent* event) {
     painter.setBrush(m_currentBackground);
 
     const QRectF bgRect = QRectF(rect()).adjusted(0.5, 0.5, -0.5, -0.5);
-    painter.drawRoundedRect(bgRect, static_cast<qreal>(m_borderRadius),
+    QPainterPath clipPath;
+    clipPath.addRoundedRect(bgRect, static_cast<qreal>(m_borderRadius),
                             static_cast<qreal>(m_borderRadius));
+    painter.drawPath(clipPath);
+
+    if (m_rippleActive && isEnabled()) {
+        const qreal radius = maxRippleRadius(m_rippleOrigin) * m_rippleProgress;
+        if (radius > 0.5) {
+            QColor ripple = m_rippleColor;
+            const int alpha = static_cast<int>(
+                static_cast<qreal>(m_rippleColor.alpha()) * (1.0 - m_rippleProgress));
+            ripple.setAlpha(clampInt(alpha, 0, 255));
+            painter.save();
+            painter.setClipPath(clipPath);
+            painter.setPen(Qt::NoPen);
+            painter.setBrush(ripple);
+            painter.drawEllipse(m_rippleOrigin, radius, radius);
+            painter.restore();
+        }
+    }
 
     if (m_pressed && isEnabled()) {
         painter.setBrush(QColor(0, 0, 0, 28));
-        painter.drawRoundedRect(bgRect, static_cast<qreal>(m_borderRadius),
-                                static_cast<qreal>(m_borderRadius));
+        painter.drawPath(clipPath);
     }
 
     if (m_loading) {
@@ -203,6 +240,9 @@ void Button::mousePressEvent(QMouseEvent* event) {
     m_pressed = true;
     if (isEnabled()) {
         startBackgroundAnimation(m_pressedBackground);
+        if (event->button() == Qt::LeftButton) {
+            startRipple(event->position());
+        }
     }
     QPushButton::mousePressEvent(event);
     update();
@@ -296,4 +336,30 @@ void Button::setLoading(bool loading) {
 
 bool Button::isLoading() const noexcept {
     return m_loading;
+}
+
+void Button::startRipple(const QPointF& origin) {
+    AnimationManager::stopAnimation(m_rippleAnimation);
+    m_rippleOrigin = origin;
+    m_rippleProgress = 0.0;
+    m_rippleActive = true;
+
+    m_rippleAnimation = AnimationManager::animateProgress(
+        0.0, 1.0, m_rippleDuration, this,
+        [this](double progress) {
+            m_rippleProgress = progress;
+            if (progress >= 1.0) {
+                m_rippleActive = false;
+            }
+            update();
+        },
+        QEasingCurve(QEasingCurve::OutCubic));
+}
+
+qreal Button::maxRippleRadius(const QPointF& origin) const noexcept {
+    const qreal d1 = qHypot(origin.x(), origin.y());
+    const qreal d2 = qHypot(width() - origin.x(), origin.y());
+    const qreal d3 = qHypot(origin.x(), height() - origin.y());
+    const qreal d4 = qHypot(width() - origin.x(), height() - origin.y());
+    return qMax(qMax(d1, d2), qMax(d3, d4));
 }

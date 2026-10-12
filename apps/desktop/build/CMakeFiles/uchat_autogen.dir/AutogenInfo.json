@@ -605,15 +605,45 @@
 			null
 		],
 		[
+			"/home/vic/Projects/chat/apps/desktop/src/chat/chat_models.hpp",
+			"MU",
+			"O5MXRAE5KY/moc_chat_models.cpp",
+			null
+		],
+		[
+			"/home/vic/Projects/chat/apps/desktop/src/chat/chat_repository.hpp",
+			"MU",
+			"O5MXRAE5KY/moc_chat_repository.cpp",
+			null
+		],
+		[
+			"/home/vic/Projects/chat/apps/desktop/src/chat/mock_chat_repository.hpp",
+			"MU",
+			"O5MXRAE5KY/moc_mock_chat_repository.cpp",
+			null
+		],
+		[
 			"/home/vic/Projects/chat/apps/desktop/src/components/Button.hpp",
 			"MU",
 			"4LREYSKJD5/moc_Button.cpp",
 			null
 		],
 		[
+			"/home/vic/Projects/chat/apps/desktop/src/components/IconButton.hpp",
+			"MU",
+			"4LREYSKJD5/moc_IconButton.cpp",
+			null
+		],
+		[
 			"/home/vic/Projects/chat/apps/desktop/src/components/InputField.hpp",
 			"MU",
 			"4LREYSKJD5/moc_InputField.cpp",
+			null
+		],
+		[
+			"/home/vic/Projects/chat/apps/desktop/src/components/Lucide.hpp",
+			"MU",
+			"4LREYSKJD5/moc_Lucide.cpp",
 			null
 		],
 		[
@@ -635,15 +665,57 @@
 			null
 		],
 		[
+			"/home/vic/Projects/chat/apps/desktop/src/ui/chat/area/chat_area.hpp",
+			"MU",
+			"ZXROANQKDW/moc_chat_area.cpp",
+			null
+		],
+		[
+			"/home/vic/Projects/chat/apps/desktop/src/ui/chat/conversation/item.hpp",
+			"MU",
+			"F6SPUJCOQY/moc_item.cpp",
+			null
+		],
+		[
+			"/home/vic/Projects/chat/apps/desktop/src/ui/chat/conversation/list.hpp",
+			"MU",
+			"F6SPUJCOQY/moc_list.cpp",
+			null
+		],
+		[
+			"/home/vic/Projects/chat/apps/desktop/src/ui/chat/group/dialog.hpp",
+			"MU",
+			"F3MSA3DPBO/moc_dialog.cpp",
+			null
+		],
+		[
+			"/home/vic/Projects/chat/apps/desktop/src/ui/chat/message/bubble.hpp",
+			"MU",
+			"7J6MWVNEXX/moc_bubble.cpp",
+			null
+		],
+		[
+			"/home/vic/Projects/chat/apps/desktop/src/ui/components/layout/MenuDrawer.hpp",
+			"MU",
+			"ETOWOXIT47/moc_MenuDrawer.cpp",
+			null
+		],
+		[
+			"/home/vic/Projects/chat/apps/desktop/src/ui/components/layout/TopBar.hpp",
+			"MU",
+			"ETOWOXIT47/moc_TopBar.cpp",
+			null
+		],
+		[
 			"/home/vic/Projects/chat/apps/desktop/src/ui/main/window.hpp",
 			"MU",
 			"RTSUUPBLSA/moc_window.cpp",
 			null
 		],
 		[
-			"/home/vic/Projects/chat/apps/desktop/src/ui/menu/slide.hpp",
+			"/home/vic/Projects/chat/apps/desktop/src/ui/theme/ThemeEditor.hpp",
 			"MU",
-			"AT5PZGD3M4/moc_slide.cpp",
+			"54RVG76HEP/moc_ThemeEditor.cpp",
 			null
 		]
 	],
@@ -725,12 +797,27 @@
 			null
 		],
 		[
+			"/home/vic/Projects/chat/apps/desktop/src/chat/mock_chat_repository.cpp",
+			"MU",
+			null
+		],
+		[
 			"/home/vic/Projects/chat/apps/desktop/src/components/Button.cpp",
 			"MU",
 			null
 		],
 		[
+			"/home/vic/Projects/chat/apps/desktop/src/components/IconButton.cpp",
+			"MU",
+			null
+		],
+		[
 			"/home/vic/Projects/chat/apps/desktop/src/components/InputField.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/vic/Projects/chat/apps/desktop/src/components/Lucide.cpp",
 			"MU",
 			null
 		],
@@ -751,12 +838,47 @@
 			null
 		],
 		[
+			"/home/vic/Projects/chat/apps/desktop/src/ui/chat/area/chat_area.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/vic/Projects/chat/apps/desktop/src/ui/chat/conversation/item.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/vic/Projects/chat/apps/desktop/src/ui/chat/conversation/list.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/vic/Projects/chat/apps/desktop/src/ui/chat/group/dialog.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/vic/Projects/chat/apps/desktop/src/ui/chat/message/bubble.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/vic/Projects/chat/apps/desktop/src/ui/components/layout/MenuDrawer.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/vic/Projects/chat/apps/desktop/src/ui/components/layout/TopBar.cpp",
+			"MU",
+			null
+		],
+		[
 			"/home/vic/Projects/chat/apps/desktop/src/ui/main/window.cpp",
 			"MU",
 			null
 		],
 		[
-			"/home/vic/Projects/chat/apps/desktop/src/ui/menu/slide.cpp",
+			"/home/vic/Projects/chat/apps/desktop/src/ui/theme/ThemeEditor.cpp",
 			"MU",
 			null
 		]

@@ -19,15 +19,33 @@
 },
 {
   "directory": "/home/vic/Projects/chat/apps/desktop/build",
+  "command": "/usr/bin/clang++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/vic/Projects/chat/apps/desktop/build/uchat_autogen/include -I/home/vic/Projects/chat/apps/desktop/src -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtNetwork -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wsign-conversion -Wformat=2 -fno-direct-access-external-data -o CMakeFiles/uchat.dir/src/chat/mock_chat_repository.cpp.o -c /home/vic/Projects/chat/apps/desktop/src/chat/mock_chat_repository.cpp",
+  "file": "/home/vic/Projects/chat/apps/desktop/src/chat/mock_chat_repository.cpp",
+  "output": "/home/vic/Projects/chat/apps/desktop/build/CMakeFiles/uchat.dir/src/chat/mock_chat_repository.cpp.o"
+},
+{
+  "directory": "/home/vic/Projects/chat/apps/desktop/build",
   "command": "/usr/bin/clang++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/vic/Projects/chat/apps/desktop/build/uchat_autogen/include -I/home/vic/Projects/chat/apps/desktop/src -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtNetwork -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wsign-conversion -Wformat=2 -fno-direct-access-external-data -o CMakeFiles/uchat.dir/src/components/Button.cpp.o -c /home/vic/Projects/chat/apps/desktop/src/components/Button.cpp",
   "file": "/home/vic/Projects/chat/apps/desktop/src/components/Button.cpp",
   "output": "/home/vic/Projects/chat/apps/desktop/build/CMakeFiles/uchat.dir/src/components/Button.cpp.o"
 },
 {
   "directory": "/home/vic/Projects/chat/apps/desktop/build",
+  "command": "/usr/bin/clang++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/vic/Projects/chat/apps/desktop/build/uchat_autogen/include -I/home/vic/Projects/chat/apps/desktop/src -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtNetwork -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wsign-conversion -Wformat=2 -fno-direct-access-external-data -o CMakeFiles/uchat.dir/src/components/IconButton.cpp.o -c /home/vic/Projects/chat/apps/desktop/src/components/IconButton.cpp",
+  "file": "/home/vic/Projects/chat/apps/desktop/src/components/IconButton.cpp",
+  "output": "/home/vic/Projects/chat/apps/desktop/build/CMakeFiles/uchat.dir/src/components/IconButton.cpp.o"
+},
+{
+  "directory": "/home/vic/Projects/chat/apps/desktop/build",
   "command": "/usr/bin/clang++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/vic/Projects/chat/apps/desktop/build/uchat_autogen/include -I/home/vic/Projects/chat/apps/desktop/src -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtNetwork -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wsign-conversion -Wformat=2 -fno-direct-access-external-data -o CMakeFiles/uchat.dir/src/components/InputField.cpp.o -c /home/vic/Projects/chat/apps/desktop/src/components/InputField.cpp",
   "file": "/home/vic/Projects/chat/apps/desktop/src/components/InputField.cpp",
   "output": "/home/vic/Projects/chat/apps/desktop/build/CMakeFiles/uchat.dir/src/components/InputField.cpp.o"
+},
+{
+  "directory": "/home/vic/Projects/chat/apps/desktop/build",
+  "command": "/usr/bin/clang++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/vic/Projects/chat/apps/desktop/build/uchat_autogen/include -I/home/vic/Projects/chat/apps/desktop/src -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtNetwork -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wsign-conversion -Wformat=2 -fno-direct-access-external-data -o CMakeFiles/uchat.dir/src/components/Lucide.cpp.o -c /home/vic/Projects/chat/apps/desktop/src/components/Lucide.cpp",
+  "file": "/home/vic/Projects/chat/apps/desktop/src/components/Lucide.cpp",
+  "output": "/home/vic/Projects/chat/apps/desktop/build/CMakeFiles/uchat.dir/src/components/Lucide.cpp.o"
 },
 {
   "directory": "/home/vic/Projects/chat/apps/desktop/build",
@@ -55,15 +73,57 @@
 },
 {
   "directory": "/home/vic/Projects/chat/apps/desktop/build",
+  "command": "/usr/bin/clang++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/vic/Projects/chat/apps/desktop/build/uchat_autogen/include -I/home/vic/Projects/chat/apps/desktop/src -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtNetwork -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wsign-conversion -Wformat=2 -fno-direct-access-external-data -o CMakeFiles/uchat.dir/src/ui/chat/area/chat_area.cpp.o -c /home/vic/Projects/chat/apps/desktop/src/ui/chat/area/chat_area.cpp",
+  "file": "/home/vic/Projects/chat/apps/desktop/src/ui/chat/area/chat_area.cpp",
+  "output": "/home/vic/Projects/chat/apps/desktop/build/CMakeFiles/uchat.dir/src/ui/chat/area/chat_area.cpp.o"
+},
+{
+  "directory": "/home/vic/Projects/chat/apps/desktop/build",
+  "command": "/usr/bin/clang++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/vic/Projects/chat/apps/desktop/build/uchat_autogen/include -I/home/vic/Projects/chat/apps/desktop/src -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtNetwork -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wsign-conversion -Wformat=2 -fno-direct-access-external-data -o CMakeFiles/uchat.dir/src/ui/chat/conversation/item.cpp.o -c /home/vic/Projects/chat/apps/desktop/src/ui/chat/conversation/item.cpp",
+  "file": "/home/vic/Projects/chat/apps/desktop/src/ui/chat/conversation/item.cpp",
+  "output": "/home/vic/Projects/chat/apps/desktop/build/CMakeFiles/uchat.dir/src/ui/chat/conversation/item.cpp.o"
+},
+{
+  "directory": "/home/vic/Projects/chat/apps/desktop/build",
+  "command": "/usr/bin/clang++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/vic/Projects/chat/apps/desktop/build/uchat_autogen/include -I/home/vic/Projects/chat/apps/desktop/src -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtNetwork -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wsign-conversion -Wformat=2 -fno-direct-access-external-data -o CMakeFiles/uchat.dir/src/ui/chat/conversation/list.cpp.o -c /home/vic/Projects/chat/apps/desktop/src/ui/chat/conversation/list.cpp",
+  "file": "/home/vic/Projects/chat/apps/desktop/src/ui/chat/conversation/list.cpp",
+  "output": "/home/vic/Projects/chat/apps/desktop/build/CMakeFiles/uchat.dir/src/ui/chat/conversation/list.cpp.o"
+},
+{
+  "directory": "/home/vic/Projects/chat/apps/desktop/build",
+  "command": "/usr/bin/clang++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/vic/Projects/chat/apps/desktop/build/uchat_autogen/include -I/home/vic/Projects/chat/apps/desktop/src -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtNetwork -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wsign-conversion -Wformat=2 -fno-direct-access-external-data -o CMakeFiles/uchat.dir/src/ui/chat/group/dialog.cpp.o -c /home/vic/Projects/chat/apps/desktop/src/ui/chat/group/dialog.cpp",
+  "file": "/home/vic/Projects/chat/apps/desktop/src/ui/chat/group/dialog.cpp",
+  "output": "/home/vic/Projects/chat/apps/desktop/build/CMakeFiles/uchat.dir/src/ui/chat/group/dialog.cpp.o"
+},
+{
+  "directory": "/home/vic/Projects/chat/apps/desktop/build",
+  "command": "/usr/bin/clang++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/vic/Projects/chat/apps/desktop/build/uchat_autogen/include -I/home/vic/Projects/chat/apps/desktop/src -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtNetwork -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wsign-conversion -Wformat=2 -fno-direct-access-external-data -o CMakeFiles/uchat.dir/src/ui/chat/message/bubble.cpp.o -c /home/vic/Projects/chat/apps/desktop/src/ui/chat/message/bubble.cpp",
+  "file": "/home/vic/Projects/chat/apps/desktop/src/ui/chat/message/bubble.cpp",
+  "output": "/home/vic/Projects/chat/apps/desktop/build/CMakeFiles/uchat.dir/src/ui/chat/message/bubble.cpp.o"
+},
+{
+  "directory": "/home/vic/Projects/chat/apps/desktop/build",
+  "command": "/usr/bin/clang++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/vic/Projects/chat/apps/desktop/build/uchat_autogen/include -I/home/vic/Projects/chat/apps/desktop/src -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtNetwork -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wsign-conversion -Wformat=2 -fno-direct-access-external-data -o CMakeFiles/uchat.dir/src/ui/components/layout/MenuDrawer.cpp.o -c /home/vic/Projects/chat/apps/desktop/src/ui/components/layout/MenuDrawer.cpp",
+  "file": "/home/vic/Projects/chat/apps/desktop/src/ui/components/layout/MenuDrawer.cpp",
+  "output": "/home/vic/Projects/chat/apps/desktop/build/CMakeFiles/uchat.dir/src/ui/components/layout/MenuDrawer.cpp.o"
+},
+{
+  "directory": "/home/vic/Projects/chat/apps/desktop/build",
+  "command": "/usr/bin/clang++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/vic/Projects/chat/apps/desktop/build/uchat_autogen/include -I/home/vic/Projects/chat/apps/desktop/src -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtNetwork -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wsign-conversion -Wformat=2 -fno-direct-access-external-data -o CMakeFiles/uchat.dir/src/ui/components/layout/TopBar.cpp.o -c /home/vic/Projects/chat/apps/desktop/src/ui/components/layout/TopBar.cpp",
+  "file": "/home/vic/Projects/chat/apps/desktop/src/ui/components/layout/TopBar.cpp",
+  "output": "/home/vic/Projects/chat/apps/desktop/build/CMakeFiles/uchat.dir/src/ui/components/layout/TopBar.cpp.o"
+},
+{
+  "directory": "/home/vic/Projects/chat/apps/desktop/build",
   "command": "/usr/bin/clang++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/vic/Projects/chat/apps/desktop/build/uchat_autogen/include -I/home/vic/Projects/chat/apps/desktop/src -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtNetwork -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wsign-conversion -Wformat=2 -fno-direct-access-external-data -o CMakeFiles/uchat.dir/src/ui/main/window.cpp.o -c /home/vic/Projects/chat/apps/desktop/src/ui/main/window.cpp",
   "file": "/home/vic/Projects/chat/apps/desktop/src/ui/main/window.cpp",
   "output": "/home/vic/Projects/chat/apps/desktop/build/CMakeFiles/uchat.dir/src/ui/main/window.cpp.o"
 },
 {
   "directory": "/home/vic/Projects/chat/apps/desktop/build",
-  "command": "/usr/bin/clang++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/vic/Projects/chat/apps/desktop/build/uchat_autogen/include -I/home/vic/Projects/chat/apps/desktop/src -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtNetwork -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wsign-conversion -Wformat=2 -fno-direct-access-external-data -o CMakeFiles/uchat.dir/src/ui/menu/slide.cpp.o -c /home/vic/Projects/chat/apps/desktop/src/ui/menu/slide.cpp",
-  "file": "/home/vic/Projects/chat/apps/desktop/src/ui/menu/slide.cpp",
-  "output": "/home/vic/Projects/chat/apps/desktop/build/CMakeFiles/uchat.dir/src/ui/menu/slide.cpp.o"
+  "command": "/usr/bin/clang++ -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/vic/Projects/chat/apps/desktop/build/uchat_autogen/include -I/home/vic/Projects/chat/apps/desktop/src -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtNetwork -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wsign-conversion -Wformat=2 -fno-direct-access-external-data -o CMakeFiles/uchat.dir/src/ui/theme/ThemeEditor.cpp.o -c /home/vic/Projects/chat/apps/desktop/src/ui/theme/ThemeEditor.cpp",
+  "file": "/home/vic/Projects/chat/apps/desktop/src/ui/theme/ThemeEditor.cpp",
+  "output": "/home/vic/Projects/chat/apps/desktop/build/CMakeFiles/uchat.dir/src/ui/theme/ThemeEditor.cpp.o"
 },
 {
   "directory": "/home/vic/Projects/chat/apps/desktop/build",

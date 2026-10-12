@@ -79,6 +79,16 @@ build CMakeFiles/uchat.dir/src/app/AppState.cpp.o: CXX_COMPILER__uchat_unscanned
   OBJECT_FILE_DIR = CMakeFiles/uchat.dir/src/app
   TARGET_SUPPORT_DIR = CMakeFiles/uchat.dir
 
+build CMakeFiles/uchat.dir/src/chat/mock_chat_repository.cpp.o: CXX_COMPILER__uchat_unscanned_Release /home/vic/Projects/chat/apps/desktop/src/chat/mock_chat_repository.cpp || cmake_object_order_depends_target_uchat
+  CONFIG = Release
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/uchat.dir/src/chat/mock_chat_repository.cpp.o.d
+  FLAGS = -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wsign-conversion -Wformat=2 -fno-direct-access-external-data
+  INCLUDES = -I/home/vic/Projects/chat/apps/desktop/build/uchat_autogen/include -I/home/vic/Projects/chat/apps/desktop/src -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtNetwork
+  OBJECT_DIR = CMakeFiles/uchat.dir
+  OBJECT_FILE_DIR = CMakeFiles/uchat.dir/src/chat
+  TARGET_SUPPORT_DIR = CMakeFiles/uchat.dir
+
 build CMakeFiles/uchat.dir/src/components/Button.cpp.o: CXX_COMPILER__uchat_unscanned_Release /home/vic/Projects/chat/apps/desktop/src/components/Button.cpp || cmake_object_order_depends_target_uchat
   CONFIG = Release
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB
@@ -89,10 +99,30 @@ build CMakeFiles/uchat.dir/src/components/Button.cpp.o: CXX_COMPILER__uchat_unsc
   OBJECT_FILE_DIR = CMakeFiles/uchat.dir/src/components
   TARGET_SUPPORT_DIR = CMakeFiles/uchat.dir
 
+build CMakeFiles/uchat.dir/src/components/IconButton.cpp.o: CXX_COMPILER__uchat_unscanned_Release /home/vic/Projects/chat/apps/desktop/src/components/IconButton.cpp || cmake_object_order_depends_target_uchat
+  CONFIG = Release
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/uchat.dir/src/components/IconButton.cpp.o.d
+  FLAGS = -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wsign-conversion -Wformat=2 -fno-direct-access-external-data
+  INCLUDES = -I/home/vic/Projects/chat/apps/desktop/build/uchat_autogen/include -I/home/vic/Projects/chat/apps/desktop/src -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtNetwork
+  OBJECT_DIR = CMakeFiles/uchat.dir
+  OBJECT_FILE_DIR = CMakeFiles/uchat.dir/src/components
+  TARGET_SUPPORT_DIR = CMakeFiles/uchat.dir
+
 build CMakeFiles/uchat.dir/src/components/InputField.cpp.o: CXX_COMPILER__uchat_unscanned_Release /home/vic/Projects/chat/apps/desktop/src/components/InputField.cpp || cmake_object_order_depends_target_uchat
   CONFIG = Release
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB
   DEP_FILE = CMakeFiles/uchat.dir/src/components/InputField.cpp.o.d
+  FLAGS = -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wsign-conversion -Wformat=2 -fno-direct-access-external-data
+  INCLUDES = -I/home/vic/Projects/chat/apps/desktop/build/uchat_autogen/include -I/home/vic/Projects/chat/apps/desktop/src -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtNetwork
+  OBJECT_DIR = CMakeFiles/uchat.dir
+  OBJECT_FILE_DIR = CMakeFiles/uchat.dir/src/components
+  TARGET_SUPPORT_DIR = CMakeFiles/uchat.dir
+
+build CMakeFiles/uchat.dir/src/components/Lucide.cpp.o: CXX_COMPILER__uchat_unscanned_Release /home/vic/Projects/chat/apps/desktop/src/components/Lucide.cpp || cmake_object_order_depends_target_uchat
+  CONFIG = Release
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/uchat.dir/src/components/Lucide.cpp.o.d
   FLAGS = -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wsign-conversion -Wformat=2 -fno-direct-access-external-data
   INCLUDES = -I/home/vic/Projects/chat/apps/desktop/build/uchat_autogen/include -I/home/vic/Projects/chat/apps/desktop/src -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtNetwork
   OBJECT_DIR = CMakeFiles/uchat.dir
@@ -139,6 +169,76 @@ build CMakeFiles/uchat.dir/src/ui/auth/login.cpp.o: CXX_COMPILER__uchat_unscanne
   OBJECT_FILE_DIR = CMakeFiles/uchat.dir/src/ui/auth
   TARGET_SUPPORT_DIR = CMakeFiles/uchat.dir
 
+build CMakeFiles/uchat.dir/src/ui/chat/area/chat_area.cpp.o: CXX_COMPILER__uchat_unscanned_Release /home/vic/Projects/chat/apps/desktop/src/ui/chat/area/chat_area.cpp || cmake_object_order_depends_target_uchat
+  CONFIG = Release
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/uchat.dir/src/ui/chat/area/chat_area.cpp.o.d
+  FLAGS = -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wsign-conversion -Wformat=2 -fno-direct-access-external-data
+  INCLUDES = -I/home/vic/Projects/chat/apps/desktop/build/uchat_autogen/include -I/home/vic/Projects/chat/apps/desktop/src -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtNetwork
+  OBJECT_DIR = CMakeFiles/uchat.dir
+  OBJECT_FILE_DIR = CMakeFiles/uchat.dir/src/ui/chat/area
+  TARGET_SUPPORT_DIR = CMakeFiles/uchat.dir
+
+build CMakeFiles/uchat.dir/src/ui/chat/conversation/item.cpp.o: CXX_COMPILER__uchat_unscanned_Release /home/vic/Projects/chat/apps/desktop/src/ui/chat/conversation/item.cpp || cmake_object_order_depends_target_uchat
+  CONFIG = Release
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/uchat.dir/src/ui/chat/conversation/item.cpp.o.d
+  FLAGS = -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wsign-conversion -Wformat=2 -fno-direct-access-external-data
+  INCLUDES = -I/home/vic/Projects/chat/apps/desktop/build/uchat_autogen/include -I/home/vic/Projects/chat/apps/desktop/src -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtNetwork
+  OBJECT_DIR = CMakeFiles/uchat.dir
+  OBJECT_FILE_DIR = CMakeFiles/uchat.dir/src/ui/chat/conversation
+  TARGET_SUPPORT_DIR = CMakeFiles/uchat.dir
+
+build CMakeFiles/uchat.dir/src/ui/chat/conversation/list.cpp.o: CXX_COMPILER__uchat_unscanned_Release /home/vic/Projects/chat/apps/desktop/src/ui/chat/conversation/list.cpp || cmake_object_order_depends_target_uchat
+  CONFIG = Release
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/uchat.dir/src/ui/chat/conversation/list.cpp.o.d
+  FLAGS = -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wsign-conversion -Wformat=2 -fno-direct-access-external-data
+  INCLUDES = -I/home/vic/Projects/chat/apps/desktop/build/uchat_autogen/include -I/home/vic/Projects/chat/apps/desktop/src -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtNetwork
+  OBJECT_DIR = CMakeFiles/uchat.dir
+  OBJECT_FILE_DIR = CMakeFiles/uchat.dir/src/ui/chat/conversation
+  TARGET_SUPPORT_DIR = CMakeFiles/uchat.dir
+
+build CMakeFiles/uchat.dir/src/ui/chat/group/dialog.cpp.o: CXX_COMPILER__uchat_unscanned_Release /home/vic/Projects/chat/apps/desktop/src/ui/chat/group/dialog.cpp || cmake_object_order_depends_target_uchat
+  CONFIG = Release
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/uchat.dir/src/ui/chat/group/dialog.cpp.o.d
+  FLAGS = -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wsign-conversion -Wformat=2 -fno-direct-access-external-data
+  INCLUDES = -I/home/vic/Projects/chat/apps/desktop/build/uchat_autogen/include -I/home/vic/Projects/chat/apps/desktop/src -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtNetwork
+  OBJECT_DIR = CMakeFiles/uchat.dir
+  OBJECT_FILE_DIR = CMakeFiles/uchat.dir/src/ui/chat/group
+  TARGET_SUPPORT_DIR = CMakeFiles/uchat.dir
+
+build CMakeFiles/uchat.dir/src/ui/chat/message/bubble.cpp.o: CXX_COMPILER__uchat_unscanned_Release /home/vic/Projects/chat/apps/desktop/src/ui/chat/message/bubble.cpp || cmake_object_order_depends_target_uchat
+  CONFIG = Release
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/uchat.dir/src/ui/chat/message/bubble.cpp.o.d
+  FLAGS = -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wsign-conversion -Wformat=2 -fno-direct-access-external-data
+  INCLUDES = -I/home/vic/Projects/chat/apps/desktop/build/uchat_autogen/include -I/home/vic/Projects/chat/apps/desktop/src -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtNetwork
+  OBJECT_DIR = CMakeFiles/uchat.dir
+  OBJECT_FILE_DIR = CMakeFiles/uchat.dir/src/ui/chat/message
+  TARGET_SUPPORT_DIR = CMakeFiles/uchat.dir
+
+build CMakeFiles/uchat.dir/src/ui/components/layout/MenuDrawer.cpp.o: CXX_COMPILER__uchat_unscanned_Release /home/vic/Projects/chat/apps/desktop/src/ui/components/layout/MenuDrawer.cpp || cmake_object_order_depends_target_uchat
+  CONFIG = Release
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/uchat.dir/src/ui/components/layout/MenuDrawer.cpp.o.d
+  FLAGS = -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wsign-conversion -Wformat=2 -fno-direct-access-external-data
+  INCLUDES = -I/home/vic/Projects/chat/apps/desktop/build/uchat_autogen/include -I/home/vic/Projects/chat/apps/desktop/src -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtNetwork
+  OBJECT_DIR = CMakeFiles/uchat.dir
+  OBJECT_FILE_DIR = CMakeFiles/uchat.dir/src/ui/components/layout
+  TARGET_SUPPORT_DIR = CMakeFiles/uchat.dir
+
+build CMakeFiles/uchat.dir/src/ui/components/layout/TopBar.cpp.o: CXX_COMPILER__uchat_unscanned_Release /home/vic/Projects/chat/apps/desktop/src/ui/components/layout/TopBar.cpp || cmake_object_order_depends_target_uchat
+  CONFIG = Release
+  DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB
+  DEP_FILE = CMakeFiles/uchat.dir/src/ui/components/layout/TopBar.cpp.o.d
+  FLAGS = -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wsign-conversion -Wformat=2 -fno-direct-access-external-data
+  INCLUDES = -I/home/vic/Projects/chat/apps/desktop/build/uchat_autogen/include -I/home/vic/Projects/chat/apps/desktop/src -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtNetwork
+  OBJECT_DIR = CMakeFiles/uchat.dir
+  OBJECT_FILE_DIR = CMakeFiles/uchat.dir/src/ui/components/layout
+  TARGET_SUPPORT_DIR = CMakeFiles/uchat.dir
+
 build CMakeFiles/uchat.dir/src/ui/main/window.cpp.o: CXX_COMPILER__uchat_unscanned_Release /home/vic/Projects/chat/apps/desktop/src/ui/main/window.cpp || cmake_object_order_depends_target_uchat
   CONFIG = Release
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB
@@ -149,14 +249,14 @@ build CMakeFiles/uchat.dir/src/ui/main/window.cpp.o: CXX_COMPILER__uchat_unscann
   OBJECT_FILE_DIR = CMakeFiles/uchat.dir/src/ui/main
   TARGET_SUPPORT_DIR = CMakeFiles/uchat.dir
 
-build CMakeFiles/uchat.dir/src/ui/menu/slide.cpp.o: CXX_COMPILER__uchat_unscanned_Release /home/vic/Projects/chat/apps/desktop/src/ui/menu/slide.cpp || cmake_object_order_depends_target_uchat
+build CMakeFiles/uchat.dir/src/ui/theme/ThemeEditor.cpp.o: CXX_COMPILER__uchat_unscanned_Release /home/vic/Projects/chat/apps/desktop/src/ui/theme/ThemeEditor.cpp || cmake_object_order_depends_target_uchat
   CONFIG = Release
   DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/uchat.dir/src/ui/menu/slide.cpp.o.d
+  DEP_FILE = CMakeFiles/uchat.dir/src/ui/theme/ThemeEditor.cpp.o.d
   FLAGS = -O3 -DNDEBUG -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -Wconversion -Wsign-conversion -Wformat=2 -fno-direct-access-external-data
   INCLUDES = -I/home/vic/Projects/chat/apps/desktop/build/uchat_autogen/include -I/home/vic/Projects/chat/apps/desktop/src -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtNetwork
   OBJECT_DIR = CMakeFiles/uchat.dir
-  OBJECT_FILE_DIR = CMakeFiles/uchat.dir/src/ui/menu
+  OBJECT_FILE_DIR = CMakeFiles/uchat.dir/src/ui/theme
   TARGET_SUPPORT_DIR = CMakeFiles/uchat.dir
 
 build CMakeFiles/uchat.dir/uchat_autogen/F4FAE6NH3Q/qrc_resources.cpp.o: CXX_COMPILER__uchat_unscanned_Release /home/vic/Projects/chat/apps/desktop/build/uchat_autogen/F4FAE6NH3Q/qrc_resources.cpp || cmake_object_order_depends_target_uchat
@@ -177,7 +277,7 @@ build CMakeFiles/uchat.dir/uchat_autogen/F4FAE6NH3Q/qrc_resources.cpp.o: CXX_COM
 #############################################
 # Link the executable uchat
 
-build uchat: CXX_EXECUTABLE_LINKER__uchat_Release CMakeFiles/uchat.dir/uchat_autogen/mocs_compilation.cpp.o CMakeFiles/uchat.dir/src/animation/AnimationManager.cpp.o CMakeFiles/uchat.dir/src/app/AppState.cpp.o CMakeFiles/uchat.dir/src/components/Button.cpp.o CMakeFiles/uchat.dir/src/components/InputField.cpp.o CMakeFiles/uchat.dir/src/http/auth/Authorization.cpp.o CMakeFiles/uchat.dir/src/main.cpp.o CMakeFiles/uchat.dir/src/theme/ThemeManager.cpp.o CMakeFiles/uchat.dir/src/ui/auth/login.cpp.o CMakeFiles/uchat.dir/src/ui/main/window.cpp.o CMakeFiles/uchat.dir/src/ui/menu/slide.cpp.o CMakeFiles/uchat.dir/uchat_autogen/F4FAE6NH3Q/qrc_resources.cpp.o | /usr/lib/libQt6Widgets.so.6.11.2 /usr/lib/libQt6Network.so.6.11.2 /usr/lib/libQt6Gui.so.6.11.2 /usr/lib/libGLX.so /usr/lib/libOpenGL.so /usr/lib/libQt6Core.so.6.11.2 || uchat_autogen uchat_autogen_timestamp_deps
+build uchat: CXX_EXECUTABLE_LINKER__uchat_Release CMakeFiles/uchat.dir/uchat_autogen/mocs_compilation.cpp.o CMakeFiles/uchat.dir/src/animation/AnimationManager.cpp.o CMakeFiles/uchat.dir/src/app/AppState.cpp.o CMakeFiles/uchat.dir/src/chat/mock_chat_repository.cpp.o CMakeFiles/uchat.dir/src/components/Button.cpp.o CMakeFiles/uchat.dir/src/components/IconButton.cpp.o CMakeFiles/uchat.dir/src/components/InputField.cpp.o CMakeFiles/uchat.dir/src/components/Lucide.cpp.o CMakeFiles/uchat.dir/src/http/auth/Authorization.cpp.o CMakeFiles/uchat.dir/src/main.cpp.o CMakeFiles/uchat.dir/src/theme/ThemeManager.cpp.o CMakeFiles/uchat.dir/src/ui/auth/login.cpp.o CMakeFiles/uchat.dir/src/ui/chat/area/chat_area.cpp.o CMakeFiles/uchat.dir/src/ui/chat/conversation/item.cpp.o CMakeFiles/uchat.dir/src/ui/chat/conversation/list.cpp.o CMakeFiles/uchat.dir/src/ui/chat/group/dialog.cpp.o CMakeFiles/uchat.dir/src/ui/chat/message/bubble.cpp.o CMakeFiles/uchat.dir/src/ui/components/layout/MenuDrawer.cpp.o CMakeFiles/uchat.dir/src/ui/components/layout/TopBar.cpp.o CMakeFiles/uchat.dir/src/ui/main/window.cpp.o CMakeFiles/uchat.dir/src/ui/theme/ThemeEditor.cpp.o CMakeFiles/uchat.dir/uchat_autogen/F4FAE6NH3Q/qrc_resources.cpp.o | /usr/lib/libQt6Widgets.so.6.11.2 /usr/lib/libQt6Network.so.6.11.2 /usr/lib/libQt6Gui.so.6.11.2 /usr/lib/libGLX.so /usr/lib/libOpenGL.so /usr/lib/libQt6Core.so.6.11.2 || uchat_autogen uchat_autogen_timestamp_deps
   CONFIG = Release
   DEP_FILE = CMakeFiles/uchat.dir/link.d
   FLAGS = -O3 -DNDEBUG
@@ -241,7 +341,7 @@ build uchat_autogen/timestamp uchat_autogen/mocs_compilation.cpp | ${cmake_ninja
 #############################################
 # Custom command for uchat_autogen/F4FAE6NH3Q/qrc_resources.cpp
 
-build uchat_autogen/F4FAE6NH3Q/qrc_resources.cpp | ${cmake_ninja_workdir}uchat_autogen/F4FAE6NH3Q/qrc_resources.cpp: CUSTOM_COMMAND /home/vic/Projects/chat/apps/desktop/src/resources/resources.qrc CMakeFiles/uchat_autogen.dir/AutoRcc_resources_F4FAE6NH3Q_Info.json /home/vic/Projects/chat/apps/desktop/src/resources/styles/global.qss /home/vic/Projects/chat/apps/desktop/src/resources/styles/themes/dark.qss /home/vic/Projects/chat/apps/desktop/src/resources/styles/themes/light.qss /home/vic/Projects/chat/apps/desktop/src/resources/styles/auth/login.qss /usr/lib/qt6/rcc /usr/lib/qt6/rcc || uchat_autogen uchat_autogen_timestamp_deps
+build uchat_autogen/F4FAE6NH3Q/qrc_resources.cpp | ${cmake_ninja_workdir}uchat_autogen/F4FAE6NH3Q/qrc_resources.cpp: CUSTOM_COMMAND /home/vic/Projects/chat/apps/desktop/src/resources/resources.qrc CMakeFiles/uchat_autogen.dir/AutoRcc_resources_F4FAE6NH3Q_Info.json /home/vic/Projects/chat/apps/desktop/src/resources/styles/global.qss /home/vic/Projects/chat/apps/desktop/src/resources/styles/themes/dark.qss /home/vic/Projects/chat/apps/desktop/src/resources/styles/themes/light.qss /home/vic/Projects/chat/apps/desktop/src/resources/styles/components/drawer.qss /home/vic/Projects/chat/apps/desktop/src/resources/styles/components/topbar.qss /home/vic/Projects/chat/apps/desktop/src/resources/styles/auth/login.qss /usr/lib/qt6/rcc /usr/lib/qt6/rcc || uchat_autogen uchat_autogen_timestamp_deps
   COMMAND = cd /home/vic/Projects/chat/apps/desktop/build && /usr/bin/cmake -E cmake_autorcc /home/vic/Projects/chat/apps/desktop/build/CMakeFiles/uchat_autogen.dir/AutoRcc_resources_F4FAE6NH3Q_Info.json Release
   DESC = Automatic RCC for src/resources/resources.qrc
   restat = 1

@@ -30,6 +30,7 @@ void AnimationManager::fadeIn(QWidget* widget, int duration) {
     animation->start();
 }
 
+
 void AnimationManager::slideUp(
     QWidget* widget,
     int distance,

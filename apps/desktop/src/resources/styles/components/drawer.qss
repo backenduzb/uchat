@@ -1,0 +1,50 @@
+MenuDrawer#menuDrawer {
+    background: transparent;
+    border: none;
+}
+
+MenuDrawer QWidget#menuDim {
+    background-color: rgba(0, 0, 0, 140);
+    border: none;
+}
+
+MenuDrawer QWidget#menuPanel {
+    border: none;
+    border-radius: 0px;
+}
+
+MenuDrawer QLabel#menuAvatar {
+    border-radius: 32px;
+    font-size: 22pt;
+    font-weight: 700;
+}
+
+MenuDrawer QLabel#menuName {
+    background: transparent;
+    border: none;
+    font-size: 13pt;
+    font-weight: 700;
+}
+
+MenuDrawer QLabel#menuUsername {
+    background: transparent;
+    border: none;
+    font-size: 10pt;
+}
+
+MenuDrawer QLabel#menuSectionTitle {
+    background: transparent;
+    border: none;
+    font-size: 13pt;
+    font-weight: 700;
+}
+
+MenuDrawer QWidget#menuSeparator {
+    border: none;
+}
+
+Button#menuItemButton {
+    text-align: left;
+    padding: 12px 14px;
+    font-weight: 600;
+}

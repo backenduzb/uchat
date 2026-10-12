@@ -7,14 +7,24 @@
 			[
 				"/home/vic/Projects/chat/apps/desktop/src/animation/AnimationManager.cpp",
 				"/home/vic/Projects/chat/apps/desktop/src/app/AppState.cpp",
+				"/home/vic/Projects/chat/apps/desktop/src/chat/mock_chat_repository.cpp",
 				"/home/vic/Projects/chat/apps/desktop/src/components/Button.cpp",
+				"/home/vic/Projects/chat/apps/desktop/src/components/IconButton.cpp",
 				"/home/vic/Projects/chat/apps/desktop/src/components/InputField.cpp",
+				"/home/vic/Projects/chat/apps/desktop/src/components/Lucide.cpp",
 				"/home/vic/Projects/chat/apps/desktop/src/http/auth/Authorization.cpp",
 				"/home/vic/Projects/chat/apps/desktop/src/main.cpp",
 				"/home/vic/Projects/chat/apps/desktop/src/theme/ThemeManager.cpp",
 				"/home/vic/Projects/chat/apps/desktop/src/ui/auth/login.cpp",
+				"/home/vic/Projects/chat/apps/desktop/src/ui/chat/area/chat_area.cpp",
+				"/home/vic/Projects/chat/apps/desktop/src/ui/chat/conversation/item.cpp",
+				"/home/vic/Projects/chat/apps/desktop/src/ui/chat/conversation/list.cpp",
+				"/home/vic/Projects/chat/apps/desktop/src/ui/chat/group/dialog.cpp",
+				"/home/vic/Projects/chat/apps/desktop/src/ui/chat/message/bubble.cpp",
+				"/home/vic/Projects/chat/apps/desktop/src/ui/components/layout/MenuDrawer.cpp",
+				"/home/vic/Projects/chat/apps/desktop/src/ui/components/layout/TopBar.cpp",
 				"/home/vic/Projects/chat/apps/desktop/src/ui/main/window.cpp",
-				"/home/vic/Projects/chat/apps/desktop/src/ui/menu/slide.cpp"
+				"/home/vic/Projects/chat/apps/desktop/src/ui/theme/ThemeEditor.cpp"
 			],
 			"recurse" : true
 		},
@@ -24,13 +34,25 @@
 			[
 				"/home/vic/Projects/chat/apps/desktop/src/animation/AnimationManager.hpp",
 				"/home/vic/Projects/chat/apps/desktop/src/app/AppState.hpp",
+				"/home/vic/Projects/chat/apps/desktop/src/chat/chat_models.hpp",
+				"/home/vic/Projects/chat/apps/desktop/src/chat/chat_repository.hpp",
+				"/home/vic/Projects/chat/apps/desktop/src/chat/mock_chat_repository.hpp",
 				"/home/vic/Projects/chat/apps/desktop/src/components/Button.hpp",
+				"/home/vic/Projects/chat/apps/desktop/src/components/IconButton.hpp",
 				"/home/vic/Projects/chat/apps/desktop/src/components/InputField.hpp",
+				"/home/vic/Projects/chat/apps/desktop/src/components/Lucide.hpp",
 				"/home/vic/Projects/chat/apps/desktop/src/http/auth/Authorization.hpp",
 				"/home/vic/Projects/chat/apps/desktop/src/theme/ThemeManager.hpp",
 				"/home/vic/Projects/chat/apps/desktop/src/ui/auth/login.hpp",
+				"/home/vic/Projects/chat/apps/desktop/src/ui/chat/area/chat_area.hpp",
+				"/home/vic/Projects/chat/apps/desktop/src/ui/chat/conversation/item.hpp",
+				"/home/vic/Projects/chat/apps/desktop/src/ui/chat/conversation/list.hpp",
+				"/home/vic/Projects/chat/apps/desktop/src/ui/chat/group/dialog.hpp",
+				"/home/vic/Projects/chat/apps/desktop/src/ui/chat/message/bubble.hpp",
+				"/home/vic/Projects/chat/apps/desktop/src/ui/components/layout/MenuDrawer.hpp",
+				"/home/vic/Projects/chat/apps/desktop/src/ui/components/layout/TopBar.hpp",
 				"/home/vic/Projects/chat/apps/desktop/src/ui/main/window.hpp",
-				"/home/vic/Projects/chat/apps/desktop/src/ui/menu/slide.hpp"
+				"/home/vic/Projects/chat/apps/desktop/src/ui/theme/ThemeEditor.hpp"
 			],
 			"recurse" : true
 		},
