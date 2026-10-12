@@ -1,0 +1,19 @@
+QWidget {
+    font-family: "Inter", "Arial";
+    font-size: 10pt;
+}
+
+QLabel {
+    background: transparent;
+}
+
+QLineEdit {
+    border-radius: 10px;
+    padding: 12px 16px;
+}
+
+QPushButton {
+    border-radius: 10px;
+    padding: 12px;
+    font-weight: 700;
+}

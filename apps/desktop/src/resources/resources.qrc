@@ -1,0 +1,9 @@
+
+<RCC>
+    <qresource prefix="/styles">
+        <file alias="global.qss">styles/global.qss</file>
+        <file alias="themes/dark.qss">styles/themes/dark.qss</file>
+        <file alias="themes/light.qss">styles/themes/light.qss</file>
+        <file alias="auth/login.qss">styles/auth/login.qss</file>
+    </qresource>
+</RCC>

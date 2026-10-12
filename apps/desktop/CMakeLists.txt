@@ -11,15 +11,17 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(CMAKE_AUTORCC ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Widgets)
+find_package(Qt6 REQUIRED COMPONENTS Widgets Network)
 
 qt_standard_project_setup()
 
-file(GLOB_RECURSE SOURCES 
-    CONFIGURE_DEPENDS 
-    "src/*.cpp" 
-    "src/*.hpp"
+file(GLOB_RECURSE SOURCES
+    CONFIGURE_DEPENDS
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/*.hpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/*.qrc"
 )
 
 qt_add_executable(uchat ${SOURCES})
@@ -49,4 +51,6 @@ target_compile_options(uchat PRIVATE
     >
 )
 
-target_link_libraries(uchat PRIVATE Qt6::Widgets)
+target_link_libraries(
+    uchat PRIVATE Qt6::Widgets Qt6::Network
+)

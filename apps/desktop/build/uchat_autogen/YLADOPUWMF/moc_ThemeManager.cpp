@@ -40,16 +40,27 @@ template <> constexpr inline auto ThemeManager::qt_create_metaobjectdata<qt_meta
     QtMocHelpers::StringRefStorage qt_stringData {
         "ThemeManager",
         "themeChanged",
-        ""
+        "",
+        "Theme",
+        "theme",
+        "Dark",
+        "Light"
     };
 
     QtMocHelpers::UintData qt_methods {
         // Signal 'themeChanged'
-        QtMocHelpers::SignalData<void()>(1, 2, QMC::AccessPublic, QMetaType::Void),
+        QtMocHelpers::SignalData<void(enum Theme)>(1, 2, QMC::AccessPublic, QMetaType::Void, {{
+            { 0x80000000 | 3, 4 },
+        }}),
     };
     QtMocHelpers::UintData qt_properties {
     };
     QtMocHelpers::UintData qt_enums {
+        // enum 'Theme'
+        QtMocHelpers::EnumData<enum Theme>(3, 3, QMC::EnumIsScoped).add({
+            {    5, Theme::Dark },
+            {    6, Theme::Light },
+        }),
     };
     return QtMocHelpers::metaObjectData<ThemeManager, qt_meta_tag_ZN12ThemeManagerE_t>(QMC::MetaObjectFlag{}, qt_stringData,
             qt_methods, qt_properties, qt_enums);
@@ -69,12 +80,12 @@ void ThemeManager::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
     auto *_t = static_cast<ThemeManager *>(_o);
     if (_c == QMetaObject::InvokeMetaMethod) {
         switch (_id) {
-        case 0: _t->themeChanged(); break;
+        case 0: _t->themeChanged((*reinterpret_cast<std::add_pointer_t<enum Theme>>(_a[1]))); break;
         default: ;
         }
     }
     if (_c == QMetaObject::IndexOfMethod) {
-        if (QtMocHelpers::indexOfMethod<void (ThemeManager::*)()>(_a, &ThemeManager::themeChanged, 0))
+        if (QtMocHelpers::indexOfMethod<void (ThemeManager::*)(Theme )>(_a, &ThemeManager::themeChanged, 0))
             return;
     }
 }
@@ -111,8 +122,8 @@ int ThemeManager::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void ThemeManager::themeChanged()
+void ThemeManager::themeChanged(Theme _t1)
 {
-    QMetaObject::activate(this, &staticMetaObject, 0, nullptr);
+    QMetaObject::activate<void>(this, &staticMetaObject, 0, nullptr, _t1);
 }
 QT_WARNING_POP

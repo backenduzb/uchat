@@ -1,9 +1,8 @@
-
 #include <QApplication>
-#include <QObject>
+#include <QDebug>
 
-#include "app/AppState.hpp"
-#include "ui/auth/login.hpp"
+#include "animation/AnimationManager.hpp"
+#include "theme/ThemeManager.hpp"
 #include "ui/main/window.hpp"
 
 int main(int argc, char* argv[])
@@ -13,39 +12,15 @@ int main(int argc, char* argv[])
     QApplication::setApplicationName("Uchat");
     QApplication::setApplicationVersion("0.1.0");
 
-    AppState state;
+    ThemeManager themeManager;
+    AnimationManager animationManager;
 
-    LoginWindow loginWindow;
-    MainWindow mainWindow;
+    if (!themeManager.setTheme(ThemeManager::Theme::Light)) {
+        qWarning() << "Failed to load light theme.";
+    }
 
-    QObject::connect(
-        &loginWindow,
-        &LoginWindow::loginRequested,
-        &app,
-        [&state](const QString& username, const QString& password) {
-            Q_UNUSED(username);
-            Q_UNUSED(password);
-
-            state.setStatus(AppStatus::Authenticated);
-        }
-    );
-
-    QObject::connect(
-        &state,
-        &AppState::statusChanged,
-        &app,
-        [&loginWindow, &mainWindow](AppStatus status) {
-            if (status == AppStatus::Authenticated) {
-                loginWindow.hide();
-                mainWindow.show();
-            } else {
-                mainWindow.hide();
-                loginWindow.show();
-            }
-        }
-    );
-
-    loginWindow.show();
+    MainWindow mainWindow(&themeManager, &animationManager);
+    mainWindow.show();
 
     return app.exec();
 }

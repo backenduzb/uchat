@@ -542,7 +542,49 @@
 		"/usr/lib/cmake/Qt6Widgets/Qt6WidgetsMacros.cmake",
 		"/usr/lib/cmake/Qt6Widgets/Qt6WidgetsPlugins.cmake",
 		"/usr/lib/cmake/Qt6Widgets/Qt6WidgetsVersionlessAliasTargets.cmake",
-		"/usr/share/cmake/Modules/GNUInstallDirs.cmake"
+		"/usr/lib/cmake/Qt6Network/Qt6NetworkConfigVersion.cmake",
+		"/usr/lib/cmake/Qt6Network/Qt6NetworkConfigVersionImpl.cmake",
+		"/usr/lib/cmake/Qt6Network/Qt6NetworkConfig.cmake",
+		"/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/usr/lib/cmake/Qt6Network/Qt6NetworkDependencies.cmake",
+		"/usr/lib/cmake/Qt6Network/Qt6NetworkTargetsPrecheck.cmake",
+		"/usr/lib/cmake/Qt6Network/Qt6NetworkTargets.cmake",
+		"/usr/lib/cmake/Qt6Network/Qt6NetworkTargets-relwithdebinfo.cmake",
+		"/usr/lib/cmake/Qt6Network/Qt6NetworkAdditionalTargetInfo.cmake",
+		"/usr/lib/cmake/Qt6Network/Qt6NetworkPlugins.cmake",
+		"/usr/lib/cmake/Qt6Network/Qt6QConnManNetworkInformationPluginConfig.cmake",
+		"/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/usr/lib/cmake/Qt6Network/Qt6QConnManNetworkInformationPluginTargetsPrecheck.cmake",
+		"/usr/lib/cmake/Qt6Network/Qt6QConnManNetworkInformationPluginTargets.cmake",
+		"/usr/lib/cmake/Qt6Network/Qt6QConnManNetworkInformationPluginTargets-relwithdebinfo.cmake",
+		"/usr/lib/cmake/Qt6Network/Qt6QConnManNetworkInformationPluginAdditionalTargetInfo.cmake",
+		"/usr/lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginConfig.cmake",
+		"/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/usr/lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginTargetsPrecheck.cmake",
+		"/usr/lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginTargets.cmake",
+		"/usr/lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginTargets-relwithdebinfo.cmake",
+		"/usr/lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginAdditionalTargetInfo.cmake",
+		"/usr/lib/cmake/Qt6Network/Qt6QNetworkManagerNetworkInformationPluginConfig.cmake",
+		"/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/usr/lib/cmake/Qt6Network/Qt6QNetworkManagerNetworkInformationPluginTargetsPrecheck.cmake",
+		"/usr/lib/cmake/Qt6Network/Qt6QNetworkManagerNetworkInformationPluginTargets.cmake",
+		"/usr/lib/cmake/Qt6Network/Qt6QNetworkManagerNetworkInformationPluginTargets-relwithdebinfo.cmake",
+		"/usr/lib/cmake/Qt6Network/Qt6QNetworkManagerNetworkInformationPluginAdditionalTargetInfo.cmake",
+		"/usr/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginConfig.cmake",
+		"/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/usr/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargetsPrecheck.cmake",
+		"/usr/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargets.cmake",
+		"/usr/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargets-relwithdebinfo.cmake",
+		"/usr/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginAdditionalTargetInfo.cmake",
+		"/usr/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginConfig.cmake",
+		"/usr/share/cmake/Modules/CMakeFindDependencyMacro.cmake",
+		"/usr/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargetsPrecheck.cmake",
+		"/usr/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets.cmake",
+		"/usr/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets-relwithdebinfo.cmake",
+		"/usr/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginAdditionalTargetInfo.cmake",
+		"/usr/lib/cmake/Qt6Network/Qt6NetworkVersionlessAliasTargets.cmake",
+		"/usr/share/cmake/Modules/GNUInstallDirs.cmake",
+		"/home/vic/Projects/chat/apps/desktop/src/resources/resources.qrc"
 	],
 	"CMAKE_SOURCE_DIR" : "/home/vic/Projects/chat/apps/desktop",
 	"CROSS_CONFIG" : false,
@@ -551,9 +593,33 @@
 	"HEADERS" : 
 	[
 		[
+			"/home/vic/Projects/chat/apps/desktop/src/animation/AnimationManager.hpp",
+			"MU",
+			"E4MPTYZNXP/moc_AnimationManager.cpp",
+			null
+		],
+		[
 			"/home/vic/Projects/chat/apps/desktop/src/app/AppState.hpp",
 			"MU",
 			"ISMKEKEPX5/moc_AppState.cpp",
+			null
+		],
+		[
+			"/home/vic/Projects/chat/apps/desktop/src/components/Button.hpp",
+			"MU",
+			"4LREYSKJD5/moc_Button.cpp",
+			null
+		],
+		[
+			"/home/vic/Projects/chat/apps/desktop/src/components/InputField.hpp",
+			"MU",
+			"4LREYSKJD5/moc_InputField.cpp",
+			null
+		],
+		[
+			"/home/vic/Projects/chat/apps/desktop/src/http/auth/Authorization.hpp",
+			"MU",
+			"X3SQVDIMXC/moc_Authorization.cpp",
 			null
 		],
 		[
@@ -584,7 +650,14 @@
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
 	"INCLUDE_DIR" : "/home/vic/Projects/chat/apps/desktop/build/uchat_autogen/include",
 	"MOC_COMPILATION_FILE" : "/home/vic/Projects/chat/apps/desktop/build/uchat_autogen/mocs_compilation.cpp",
-	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_NO_DEBUG", "QT_WIDGETS_LIB" ],
+	"MOC_DEFINITIONS" : 
+	[
+		"QT_CORE_LIB",
+		"QT_GUI_LIB",
+		"QT_NETWORK_LIB",
+		"QT_NO_DEBUG",
+		"QT_WIDGETS_LIB"
+	],
 	"MOC_DEPEND_FILTERS" : 
 	[
 		[
@@ -600,6 +673,7 @@
 		"/usr/lib/qt6/mkspecs/linux-g++",
 		"/usr/include/qt6/QtWidgets",
 		"/usr/include/qt6/QtGui",
+		"/usr/include/qt6/QtNetwork",
 		"/usr/include",
 		"/usr/include/c++/16",
 		"/usr/include/c++/16/x86_64-pc-linux-gnu",
@@ -641,7 +715,27 @@
 	"SOURCES" : 
 	[
 		[
+			"/home/vic/Projects/chat/apps/desktop/src/animation/AnimationManager.cpp",
+			"MU",
+			null
+		],
+		[
 			"/home/vic/Projects/chat/apps/desktop/src/app/AppState.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/vic/Projects/chat/apps/desktop/src/components/Button.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/vic/Projects/chat/apps/desktop/src/components/InputField.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/vic/Projects/chat/apps/desktop/src/http/auth/Authorization.cpp",
 			"MU",
 			null
 		],

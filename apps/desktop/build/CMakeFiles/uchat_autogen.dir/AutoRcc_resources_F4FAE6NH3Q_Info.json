@@ -1,0 +1,28 @@
+{
+	"BUILD_DIR" : "/home/vic/Projects/chat/apps/desktop/build/uchat_autogen",
+	"CMAKE_BINARY_DIR" : "/home/vic/Projects/chat/apps/desktop/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "/home/vic/Projects/chat/apps/desktop/build",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/home/vic/Projects/chat/apps/desktop",
+	"CMAKE_SOURCE_DIR" : "/home/vic/Projects/chat/apps/desktop",
+	"CROSS_CONFIG" : false,
+	"GENERATOR" : "Ninja",
+	"INCLUDE_DIR" : "/home/vic/Projects/chat/apps/desktop/build/uchat_autogen/include",
+	"INPUTS" : 
+	[
+		"/home/vic/Projects/chat/apps/desktop/src/resources/styles/global.qss",
+		"/home/vic/Projects/chat/apps/desktop/src/resources/styles/themes/dark.qss",
+		"/home/vic/Projects/chat/apps/desktop/src/resources/styles/themes/light.qss",
+		"/home/vic/Projects/chat/apps/desktop/src/resources/styles/auth/login.qss"
+	],
+	"LOCK_FILE" : "/home/vic/Projects/chat/apps/desktop/build/CMakeFiles/uchat_autogen.dir/AutoRcc_resources_F4FAE6NH3Q_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "resources" ],
+	"OUTPUT_CHECKSUM" : "F4FAE6NH3Q",
+	"OUTPUT_NAME" : "qrc_resources.cpp",
+	"RCC_EXECUTABLE" : "/usr/lib/qt6/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/home/vic/Projects/chat/apps/desktop/build/CMakeFiles/uchat_autogen.dir/AutoRcc_resources_F4FAE6NH3Q_Used.txt",
+	"SOURCE" : "/home/vic/Projects/chat/apps/desktop/src/resources/resources.qrc",
+	"USE_BETTER_GRAPH" : true,
+	"VERBOSITY" : 0
+}

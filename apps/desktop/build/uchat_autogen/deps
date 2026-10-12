@@ -3,9 +3,18 @@ uchat_autogen/timestamp: \
 	/home/vic/Projects/chat/apps/desktop/build/CMakeFiles/4.4.4/CMakeCXXCompiler.cmake \
 	/home/vic/Projects/chat/apps/desktop/build/CMakeFiles/4.4.4/CMakeSystem.cmake \
 	/home/vic/Projects/chat/apps/desktop/build/uchat_autogen/moc_predefs.h \
+	/home/vic/Projects/chat/apps/desktop/src/animation/AnimationManager.cpp \
+	/home/vic/Projects/chat/apps/desktop/src/animation/AnimationManager.hpp \
 	/home/vic/Projects/chat/apps/desktop/src/app/AppState.cpp \
 	/home/vic/Projects/chat/apps/desktop/src/app/AppState.hpp \
+	/home/vic/Projects/chat/apps/desktop/src/components/Button.cpp \
+	/home/vic/Projects/chat/apps/desktop/src/components/Button.hpp \
+	/home/vic/Projects/chat/apps/desktop/src/components/InputField.cpp \
+	/home/vic/Projects/chat/apps/desktop/src/components/InputField.hpp \
+	/home/vic/Projects/chat/apps/desktop/src/http/auth/Authorization.cpp \
+	/home/vic/Projects/chat/apps/desktop/src/http/auth/Authorization.hpp \
 	/home/vic/Projects/chat/apps/desktop/src/main.cpp \
+	/home/vic/Projects/chat/apps/desktop/src/resources/resources.qrc \
 	/home/vic/Projects/chat/apps/desktop/src/theme/ThemeManager.cpp \
 	/home/vic/Projects/chat/apps/desktop/src/theme/ThemeManager.hpp \
 	/home/vic/Projects/chat/apps/desktop/src/ui/auth/login.cpp \
@@ -116,7 +125,6 @@ uchat_autogen/timestamp: \
 	/usr/include/c++/16/bits/charconv.h \
 	/usr/include/c++/16/bits/chrono.h \
 	/usr/include/c++/16/bits/chrono_io.h \
-	/usr/include/c++/16/bits/codecvt.h \
 	/usr/include/c++/16/bits/concept_check.h \
 	/usr/include/c++/16/bits/cpp_type_traits.h \
 	/usr/include/c++/16/bits/cxxabi_forced.h \
@@ -126,7 +134,6 @@ uchat_autogen/timestamp: \
 	/usr/include/c++/16/bits/exception.h \
 	/usr/include/c++/16/bits/exception_defines.h \
 	/usr/include/c++/16/bits/exception_ptr.h \
-	/usr/include/c++/16/bits/formatfwd.h \
 	/usr/include/c++/16/bits/functexcept.h \
 	/usr/include/c++/16/bits/functional_hash.h \
 	/usr/include/c++/16/bits/hash_bytes.h \
@@ -140,16 +147,12 @@ uchat_autogen/timestamp: \
 	/usr/include/c++/16/bits/list.tcc \
 	/usr/include/c++/16/bits/locale_classes.h \
 	/usr/include/c++/16/bits/locale_classes.tcc \
-	/usr/include/c++/16/bits/locale_conv.h \
 	/usr/include/c++/16/bits/locale_facets.h \
 	/usr/include/c++/16/bits/locale_facets.tcc \
-	/usr/include/c++/16/bits/locale_facets_nonio.h \
-	/usr/include/c++/16/bits/locale_facets_nonio.tcc \
 	/usr/include/c++/16/bits/localefwd.h \
 	/usr/include/c++/16/bits/max_size_type.h \
 	/usr/include/c++/16/bits/memory_resource.h \
 	/usr/include/c++/16/bits/memoryfwd.h \
-	/usr/include/c++/16/bits/monostate.h \
 	/usr/include/c++/16/bits/move.h \
 	/usr/include/c++/16/bits/nested_exception.h \
 	/usr/include/c++/16/bits/new_allocator.h \
@@ -210,8 +213,6 @@ uchat_autogen/timestamp: \
 	/usr/include/c++/16/bits/streambuf_iterator.h \
 	/usr/include/c++/16/bits/string_view.tcc \
 	/usr/include/c++/16/bits/stringfwd.h \
-	/usr/include/c++/16/bits/unicode-data.h \
-	/usr/include/c++/16/bits/unicode.h \
 	/usr/include/c++/16/bits/uniform_int_dist.h \
 	/usr/include/c++/16/bits/unique_ptr.h \
 	/usr/include/c++/16/bits/unordered_map.h \
@@ -258,23 +259,17 @@ uchat_autogen/timestamp: \
 	/usr/include/c++/16/iterator \
 	/usr/include/c++/16/limits \
 	/usr/include/c++/16/list \
-	/usr/include/c++/16/locale \
 	/usr/include/c++/16/map \
 	/usr/include/c++/16/memory \
 	/usr/include/c++/16/new \
-	/usr/include/c++/16/numbers \
 	/usr/include/c++/16/numeric \
 	/usr/include/c++/16/optional \
 	/usr/include/c++/16/ostream \
 	/usr/include/c++/16/pstl/execution_defs.h \
-	/usr/include/c++/16/pstl/glue_algorithm_defs.h \
-	/usr/include/c++/16/pstl/glue_memory_defs.h \
 	/usr/include/c++/16/pstl/glue_numeric_defs.h \
 	/usr/include/c++/16/pstl/pstl_config.h \
-	/usr/include/c++/16/ranges \
 	/usr/include/c++/16/ratio \
 	/usr/include/c++/16/set \
-	/usr/include/c++/16/span \
 	/usr/include/c++/16/sstream \
 	/usr/include/c++/16/stdexcept \
 	/usr/include/c++/16/streambuf \
@@ -312,9 +307,7 @@ uchat_autogen/timestamp: \
 	/usr/include/c++/16/x86_64-pc-linux-gnu/bits/error_constants.h \
 	/usr/include/c++/16/x86_64-pc-linux-gnu/bits/gthr-default.h \
 	/usr/include/c++/16/x86_64-pc-linux-gnu/bits/gthr.h \
-	/usr/include/c++/16/x86_64-pc-linux-gnu/bits/messages_members.h \
 	/usr/include/c++/16/x86_64-pc-linux-gnu/bits/os_defines.h \
-	/usr/include/c++/16/x86_64-pc-linux-gnu/bits/time_members.h \
 	/usr/include/ctype.h \
 	/usr/include/endian.h \
 	/usr/include/errno.h \
@@ -322,7 +315,6 @@ uchat_autogen/timestamp: \
 	/usr/include/features.h \
 	/usr/include/gnu/stubs-64.h \
 	/usr/include/gnu/stubs.h \
-	/usr/include/libintl.h \
 	/usr/include/limits.h \
 	/usr/include/linux/errno.h \
 	/usr/include/linux/limits.h \
@@ -332,9 +324,15 @@ uchat_autogen/timestamp: \
 	/usr/include/linux/types.h \
 	/usr/include/locale.h \
 	/usr/include/pthread.h \
-	/usr/include/qt6/QtCore/QJsonObject \
+	/usr/include/qt6/QtCore/QEasingCurve \
 	/usr/include/qt6/QtCore/QObject \
+	/usr/include/qt6/QtCore/QParallelAnimationGroup \
+	/usr/include/qt6/QtCore/QPoint \
+	/usr/include/qt6/QtCore/QPointer \
+	/usr/include/qt6/QtCore/QPropertyAnimation \
 	/usr/include/qt6/QtCore/QString \
+	/usr/include/qt6/QtCore/QVariantAnimation \
+	/usr/include/qt6/QtCore/QVector \
 	/usr/include/qt6/QtCore/q17memory.h \
 	/usr/include/qt6/QtCore/q20bit.h \
 	/usr/include/qt6/QtCore/q20functional.h \
@@ -344,8 +342,10 @@ uchat_autogen/timestamp: \
 	/usr/include/qt6/QtCore/q20utility.h \
 	/usr/include/qt6/QtCore/q23type_traits.h \
 	/usr/include/qt6/QtCore/q23utility.h \
+	/usr/include/qt6/QtCore/qabstractanimation.h \
 	/usr/include/qt6/QtCore/qalgorithms.h \
 	/usr/include/qt6/QtCore/qalloc.h \
+	/usr/include/qt6/QtCore/qanimationgroup.h \
 	/usr/include/qt6/QtCore/qanystringview.h \
 	/usr/include/qt6/QtCore/qarraydata.h \
 	/usr/include/qt6/QtCore/qarraydataops.h \
@@ -359,9 +359,6 @@ uchat_autogen/timestamp: \
 	/usr/include/qt6/QtCore/qbytearrayalgorithms.h \
 	/usr/include/qt6/QtCore/qbytearraylist.h \
 	/usr/include/qt6/QtCore/qbytearrayview.h \
-	/usr/include/qt6/QtCore/qcalendar.h \
-	/usr/include/qt6/QtCore/qcborcommon.h \
-	/usr/include/qt6/QtCore/qcborvalue.h \
 	/usr/include/qt6/QtCore/qchar.h \
 	/usr/include/qt6/QtCore/qcheckedint_impl.h \
 	/usr/include/qt6/QtCore/qcompare.h \
@@ -376,8 +373,8 @@ uchat_autogen/timestamp: \
 	/usr/include/qt6/QtCore/qcontiguouscache.h \
 	/usr/include/qt6/QtCore/qdarwinhelpers.h \
 	/usr/include/qt6/QtCore/qdatastream.h \
-	/usr/include/qt6/QtCore/qdatetime.h \
 	/usr/include/qt6/QtCore/qdebug.h \
+	/usr/include/qt6/QtCore/qeasingcurve.h \
 	/usr/include/qt6/QtCore/qendian.h \
 	/usr/include/qt6/QtCore/qexceptionhandling.h \
 	/usr/include/qt6/QtCore/qflags.h \
@@ -393,14 +390,9 @@ uchat_autogen/timestamp: \
 	/usr/include/qt6/QtCore/qiodevicebase.h \
 	/usr/include/qt6/QtCore/qiterable.h \
 	/usr/include/qt6/QtCore/qiterator.h \
-	/usr/include/qt6/QtCore/qjsondocument.h \
-	/usr/include/qt6/QtCore/qjsonobject.h \
-	/usr/include/qt6/QtCore/qjsonparseerror.h \
-	/usr/include/qt6/QtCore/qjsonvalue.h \
 	/usr/include/qt6/QtCore/qlatin1stringview.h \
 	/usr/include/qt6/QtCore/qline.h \
 	/usr/include/qt6/QtCore/qlist.h \
-	/usr/include/qt6/QtCore/qlocale.h \
 	/usr/include/qt6/QtCore/qlogging.h \
 	/usr/include/qt6/QtCore/qmalloc.h \
 	/usr/include/qt6/QtCore/qmap.h \
@@ -417,11 +409,13 @@ uchat_autogen/timestamp: \
 	/usr/include/qt6/QtCore/qobjectdefs_impl.h \
 	/usr/include/qt6/QtCore/qoverload.h \
 	/usr/include/qt6/QtCore/qpair.h \
+	/usr/include/qt6/QtCore/qparallelanimationgroup.h \
 	/usr/include/qt6/QtCore/qpoint.h \
+	/usr/include/qt6/QtCore/qpointer.h \
 	/usr/include/qt6/QtCore/qprocessordetection.h \
+	/usr/include/qt6/QtCore/qpropertyanimation.h \
 	/usr/include/qt6/QtCore/qrect.h \
 	/usr/include/qt6/QtCore/qrefcount.h \
-	/usr/include/qt6/QtCore/qregularexpression.h \
 	/usr/include/qt6/QtCore/qscopedpointer.h \
 	/usr/include/qt6/QtCore/qscopeguard.h \
 	/usr/include/qt6/QtCore/qset.h \
@@ -469,12 +463,14 @@ uchat_autogen/timestamp: \
 	/usr/include/qt6/QtCore/qtypes.h \
 	/usr/include/qt6/QtCore/qurl.h \
 	/usr/include/qt6/QtCore/qutf8stringview.h \
-	/usr/include/qt6/QtCore/quuid.h \
 	/usr/include/qt6/QtCore/qvariant.h \
+	/usr/include/qt6/QtCore/qvariantanimation.h \
 	/usr/include/qt6/QtCore/qvarlengtharray.h \
+	/usr/include/qt6/QtCore/qvector.h \
 	/usr/include/qt6/QtCore/qversiontagging.h \
 	/usr/include/qt6/QtCore/qxptype_traits.h \
 	/usr/include/qt6/QtCore/qyieldcpu.h \
+	/usr/include/qt6/QtGui/QColor \
 	/usr/include/qt6/QtGui/qaction.h \
 	/usr/include/qt6/QtGui/qbitmap.h \
 	/usr/include/qt6/QtGui/qbrush.h \
@@ -489,20 +485,32 @@ uchat_autogen/timestamp: \
 	/usr/include/qt6/QtGui/qkeysequence.h \
 	/usr/include/qt6/QtGui/qpaintdevice.h \
 	/usr/include/qt6/QtGui/qpalette.h \
+	/usr/include/qt6/QtGui/qpen.h \
 	/usr/include/qt6/QtGui/qpixelformat.h \
 	/usr/include/qt6/QtGui/qpixmap.h \
 	/usr/include/qt6/QtGui/qpolygon.h \
 	/usr/include/qt6/QtGui/qregion.h \
 	/usr/include/qt6/QtGui/qrgb.h \
 	/usr/include/qt6/QtGui/qrgba64.h \
+	/usr/include/qt6/QtGui/qtextcursor.h \
+	/usr/include/qt6/QtGui/qtextdocument.h \
+	/usr/include/qt6/QtGui/qtextformat.h \
+	/usr/include/qt6/QtGui/qtextoption.h \
 	/usr/include/qt6/QtGui/qtgui-config.h \
 	/usr/include/qt6/QtGui/qtguiexports.h \
 	/usr/include/qt6/QtGui/qtguiglobal.h \
 	/usr/include/qt6/QtGui/qtransform.h \
 	/usr/include/qt6/QtGui/qwindowdefs.h \
+	/usr/include/qt6/QtWidgets/QFrame \
+	/usr/include/qt6/QtWidgets/QLineEdit \
 	/usr/include/qt6/QtWidgets/QMainWindow \
+	/usr/include/qt6/QtWidgets/QPushButton \
 	/usr/include/qt6/QtWidgets/QWidget \
+	/usr/include/qt6/QtWidgets/qabstractbutton.h \
+	/usr/include/qt6/QtWidgets/qframe.h \
+	/usr/include/qt6/QtWidgets/qlineedit.h \
 	/usr/include/qt6/QtWidgets/qmainwindow.h \
+	/usr/include/qt6/QtWidgets/qpushbutton.h \
 	/usr/include/qt6/QtWidgets/qsizepolicy.h \
 	/usr/include/qt6/QtWidgets/qtabwidget.h \
 	/usr/include/qt6/QtWidgets/qtwidgets-config.h \
@@ -900,6 +908,41 @@ uchat_autogen/timestamp: \
 	/usr/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargets.cmake \
 	/usr/lib/cmake/Qt6GuiTools/Qt6GuiToolsTargetsPrecheck.cmake \
 	/usr/lib/cmake/Qt6GuiTools/Qt6GuiToolsVersionlessTargets.cmake \
+	/usr/lib/cmake/Qt6Network/Qt6NetworkAdditionalTargetInfo.cmake \
+	/usr/lib/cmake/Qt6Network/Qt6NetworkConfig.cmake \
+	/usr/lib/cmake/Qt6Network/Qt6NetworkConfigVersion.cmake \
+	/usr/lib/cmake/Qt6Network/Qt6NetworkConfigVersionImpl.cmake \
+	/usr/lib/cmake/Qt6Network/Qt6NetworkDependencies.cmake \
+	/usr/lib/cmake/Qt6Network/Qt6NetworkPlugins.cmake \
+	/usr/lib/cmake/Qt6Network/Qt6NetworkTargets-relwithdebinfo.cmake \
+	/usr/lib/cmake/Qt6Network/Qt6NetworkTargets.cmake \
+	/usr/lib/cmake/Qt6Network/Qt6NetworkTargetsPrecheck.cmake \
+	/usr/lib/cmake/Qt6Network/Qt6NetworkVersionlessAliasTargets.cmake \
+	/usr/lib/cmake/Qt6Network/Qt6QConnManNetworkInformationPluginAdditionalTargetInfo.cmake \
+	/usr/lib/cmake/Qt6Network/Qt6QConnManNetworkInformationPluginConfig.cmake \
+	/usr/lib/cmake/Qt6Network/Qt6QConnManNetworkInformationPluginTargets-relwithdebinfo.cmake \
+	/usr/lib/cmake/Qt6Network/Qt6QConnManNetworkInformationPluginTargets.cmake \
+	/usr/lib/cmake/Qt6Network/Qt6QConnManNetworkInformationPluginTargetsPrecheck.cmake \
+	/usr/lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginAdditionalTargetInfo.cmake \
+	/usr/lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginConfig.cmake \
+	/usr/lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginTargets-relwithdebinfo.cmake \
+	/usr/lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginTargets.cmake \
+	/usr/lib/cmake/Qt6Network/Qt6QGlibNetworkInformationPluginTargetsPrecheck.cmake \
+	/usr/lib/cmake/Qt6Network/Qt6QNetworkManagerNetworkInformationPluginAdditionalTargetInfo.cmake \
+	/usr/lib/cmake/Qt6Network/Qt6QNetworkManagerNetworkInformationPluginConfig.cmake \
+	/usr/lib/cmake/Qt6Network/Qt6QNetworkManagerNetworkInformationPluginTargets-relwithdebinfo.cmake \
+	/usr/lib/cmake/Qt6Network/Qt6QNetworkManagerNetworkInformationPluginTargets.cmake \
+	/usr/lib/cmake/Qt6Network/Qt6QNetworkManagerNetworkInformationPluginTargetsPrecheck.cmake \
+	/usr/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginAdditionalTargetInfo.cmake \
+	/usr/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginConfig.cmake \
+	/usr/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargets-relwithdebinfo.cmake \
+	/usr/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargets.cmake \
+	/usr/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargetsPrecheck.cmake \
+	/usr/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginAdditionalTargetInfo.cmake \
+	/usr/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginConfig.cmake \
+	/usr/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets-relwithdebinfo.cmake \
+	/usr/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets.cmake \
+	/usr/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargetsPrecheck.cmake \
 	/usr/lib/cmake/Qt6Widgets/Qt6WidgetsAdditionalTargetInfo.cmake \
 	/usr/lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake \
 	/usr/lib/cmake/Qt6Widgets/Qt6WidgetsConfigVersion.cmake \

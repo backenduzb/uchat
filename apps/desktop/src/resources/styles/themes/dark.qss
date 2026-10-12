@@ -1,0 +1,72 @@
+QWidget {
+    background-color: #171717;
+    color: #F5F5F5;
+}
+
+QLineEdit {
+    background-color: transparent;
+    color: #F5F5F5;
+    selection-background-color: #FFFFFF;
+    selection-color: #171717;
+}
+
+/* Theme colors for the animated InputField. Geometry lives in login.qss.
+   QLineEdit rules above already cover text/selection (InputField is a
+   QLineEdit subclass); only the animation targets need qproperties here. */
+InputField {
+    qproperty-normalBorderColor: #777777;
+    qproperty-focusedBorderColor: #FFFFFF;
+    qproperty-disabledBorderColor: #4A4A4A;
+    qproperty-placeholderColor: #9A9A9A;
+}
+
+QPushButton {
+    background-color: #F5F5F5;
+    color: #171717;
+    border-color: #F5F5F5;
+}
+
+QPushButton:hover {
+    background-color: #D8D8D8;
+    color: #171717;
+}
+
+QPushButton:pressed {
+    background-color: #BBBBBB;
+    color: #171717;
+}
+
+QPushButton:disabled {
+    background-color: #333333;
+    color: #888888;
+    border-color: #555555;
+}
+
+/* Theme colors for the animated Button. Placed after QPushButton so the
+   Button text color wins for Button instances (both selectors match the
+   subclass). The native background stays transparent via login.qss; the
+   animated background comes from these qproperties. */
+Button {
+    color: #171717;
+    qproperty-normalBackground: #F5F5F5;
+    qproperty-hoverBackground: #D8D8D8;
+    qproperty-pressedBackground: #BBBBBB;
+    qproperty-disabledBackground: #2A2A2A;
+}
+
+Button:disabled {
+    color: #888888;
+}
+
+QLabel#errorLabel {
+    color: #FF7070;
+}
+
+QPushButton#themeDark {
+    background-color: #171717;
+    border: 1px solid #777777;
+}
+
+QPushButton#themeLight {
+    background-color: #FFFFFF;
+}

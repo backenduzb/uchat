@@ -1,0 +1,67 @@
+QFrame#loginCard {
+    min-height: 300px;
+    min-width: 400px;
+    background: transparent;
+    border: none;
+}
+
+QLabel#loginLogo {
+    font-size: 15pt;
+    font-weight: 700;
+    background: transparent;
+}
+
+QLabel#loginTitle {
+    font-size: 23pt;
+    font-weight: 700;
+    background: transparent;
+}
+
+QLabel#loginSubtitle {
+    background: transparent;
+}
+
+QLabel#errorLabel {
+    background: transparent;
+    font-weight: 600;
+}
+
+/* Geometry only: no theme colors here. Native decoration is disabled so
+   InputField can paint its animated underline in C++. */
+InputField#usernameInput,
+InputField#passwordInput {
+    min-height: 20px;
+    padding: 8px 2px;
+    border: none;
+    background: transparent;
+    background-color: transparent;
+    border-radius: 0;
+    font-size: 10pt;
+    qproperty-underlineHeight: 1;
+    qproperty-focusedUnderlineHeight: 2;
+    qproperty-animationDuration: 150;
+}
+
+/* Geometry only: native background is transparent so Button can paint its
+   animated rounded background in C++. */
+Button#loginButton {
+    min-height: 20px;
+    padding: 12px;
+    border: none;
+    background: transparent;
+    background-color: transparent;
+    border-radius: 10px;
+    font-weight: 700;
+    qproperty-borderRadius: 10;
+    qproperty-animationDuration: 150;
+}
+
+QPushButton#themeDark,
+QPushButton#themeLight {
+    min-width: 16px;
+    max-width: 16px;
+    min-height: 16px;
+    max-height: 16px;
+    border-radius: 8px;
+    padding: 0;
+}

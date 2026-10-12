@@ -160,7 +160,7 @@ func (h *Handler) Login(w http.ResponseWriter, r *http.Request) {
 
 	if !validEmail(email) || !validPassword(input.Password) {
 		http.Error(w, `{"error":"invalid email or password"}`,
-			http.StatusBadRequest)
+			http.StatusUnauthorized)
 		return
 	}
 
